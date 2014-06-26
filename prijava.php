@@ -15,9 +15,9 @@
 	<ul class="menu">
 			<li><a href="#"><span>Prijava</span></a></li>
             <li><a href="index.html"><span>Knjižnica</span></a></li>
-            <li><a href="Knjiga/index.html"><span>Knjiga</span></a></li>
-            <li><a href="Posudba/index.html"><span>Posudba</span></a></li>
-            <li><a href="Član/index.html"><span>Član</span></a></li>
+            <li><a href="knjiga/index.php"><span>Knjiga</span></a></li>
+            <li><a href="posudba/index.php"><span>Posudba</span></a></li>
+            <li><a href="clan/index.php"><span>Član</span></a></li>
      </ul>
 	 
 	 

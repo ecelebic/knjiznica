@@ -25,7 +25,7 @@
             <li><a href="../index.html"><span>Knjižnica</span></a></li>
             <li><a href="index.php"><span>Knjiga</span></a></li>
             <li><a href="../posudba/index.php"><span>Posudba</span></a></li>
-            <li><a href="../Član/index.php"><span>Član</span></a></li>
+            <li><a href="../clan/index.php"><span>Član</span></a></li>
      </ul>
 	 
 Knjiga<br/>

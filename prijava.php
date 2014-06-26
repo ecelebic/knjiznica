@@ -38,7 +38,7 @@
 			</fieldset>
   </form>
   	<p id="porukaGreske"></p>
-  <a class="close-reveal-modal">&#215;</a>
+
 </div>  
 </div>    
 </div> 

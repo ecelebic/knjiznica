@@ -51,6 +51,12 @@ class knjiga
     {
         return $this->dostupnostKnjige;
     }
+    
+    public function pretraga($naslov, $autor) {
+        
+        
+        
+    }
 
 
 }

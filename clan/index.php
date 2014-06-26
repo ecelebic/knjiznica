@@ -12,7 +12,7 @@
     <title>Knjižnica</title>
     <link rel="stylesheet" href="../css/foundation.css" />
     <link rel="stylesheet" href="../css/stil.css" />
-    <script src="js/vendor/modernizr.js"></script>
+    <script src="../js/vendor/modernizr.js"></script>
   </head>
   <body>
 
@@ -88,8 +88,8 @@ Dodaj novog člana
 </div> 
 </div> 
    
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/foundation.min.js"></script>
+    <script src="../js/vendor/jquery.js"></script>
+    <script src="../js/foundation.min.js"></script>
     <script>
       $(document).foundation();
     </script>

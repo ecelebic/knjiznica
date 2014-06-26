@@ -51,17 +51,7 @@ class posudba
     }
     
     
-
-	public function dodajNovogClana($ime, $prezime, $fakultet, $kontakt, $mjesto)
-	{
-    	$prviclan = new Clan(1);
-
-    	$prviclan->ime = "Ema";
-    	$ime = $prviclan->ime;
-
-    	$prviclan->prezime = "Čelebić";
-    	$prezime = $prviclan->prezime;
-    }	
+	
 }
 
 

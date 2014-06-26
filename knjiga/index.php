@@ -75,13 +75,20 @@
 <table>
 	<thead>
 		<tr>
-		<th value="<?php echo $a->vratiNaslov() ?>">Naslov</th>
-		<th value="<?php echo $a->vratiAutora() ?>">Autor</th>
-		<th  value="<?php echo $a->vratiGodinuIzdanja() ?>">Godina izdanja</th>
-		<th value="<?php echo $a->vratiGodinuIzdanja() ?>">Dostupnost knjige</th>
+		<th>Naslov</th>
+		<th>Autor</th>
+		<th>Godina izdanja</th>
+		<th>Dostupnost knjige</th>
         </tr>
 	</thead>
-	<tbody></tbody>
+	<tbody>
+	
+	<th value="<?php echo $a->vratiNaslov() ?>">Naslov</th>
+	<th value="<?php echo $a->vratiAutora() ?>">Autor</th>
+	<th  value="<?php echo $a->vratiGodinuIzdanja() ?>">Godina izdanja</th>
+    <th value="<?php echo $a->vratiGodinuIzdanja() ?>">Dostupnost knjige</th>
+	
+	</tbody>
 </table>
 </div>
 </div> 

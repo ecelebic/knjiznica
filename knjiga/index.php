@@ -84,9 +84,9 @@
 	<tbody>
 	
 	<th><?php echo $a->vratiNaslov() ?></th>
-	<th value="<?php echo $a->vratiAutora() ?>">Autor</th>
-	<th  value="<?php echo $a->vratiGodinuIzdanja() ?>">Godina izdanja</th>
-    <th value="<?php echo $a->vratiGodinuIzdanja() ?>">Dostupnost knjige</th>
+	<th><?php echo $a->vratiAutora() ?></th>
+	<th><?php echo $a->vratiGodinuIzdanja() ?></th>
+    <th><?php echo $a->vratiDostupnostKnjige() ?></th>
 	
 	</tbody>
 </table>

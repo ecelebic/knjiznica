@@ -47,19 +47,19 @@
   <div class="row">
     <div class="large-12 columns">
       <label>
-        <input type="text" placeholder="Ime člana" value="<?php echo $a->vratiIme() ?>" />
+        <input type="text" placeholder="Ime člana" />
       </label>
 	  <label>
-        <input type="text" placeholder="Prezime člana" value="<?php echo $a->vratiPrezime() ?>" />
+        <input type="text" placeholder="Prezime člana" />
       </label>
 	  <label>
-        <input type="text" placeholder="Fakultet" value="<?php echo $a->vratiFakultet() ?>" />
+        <input type="text" placeholder="Fakultet" />
       </label>
 	  <label>
-        <input type="text" placeholder="Kontakt" value="<?php echo $a->vratiKontakt() ?>" />
+        <input type="text" placeholder="Kontakt" />
       </label>
 	  <label>
-        <input type="text" placeholder="Mjesto" value="<?php echo $a->vratiMjesto() ?>" />
+        <input type="text" placeholder="Mjesto"  />
       </label><br/>
 	  <a href="#" class="button green">Dodaj</a>
 	</div>
@@ -80,7 +80,13 @@
         <th>Mjesto</th>		
 		</tr>
 	</thead>
-	<tbody></tbody>
+	<tbody>
+	<th><?php echo $a->vratiIme() ?></th>
+	<th><?php echo $a->vratiPrezime() ?></th>
+	<th><?php echo $a->vratiFakultet() ?></th>
+	<th><?php echo $a->vratiKontakt() ?></th>	
+	<th><?php echo $a->vratiMjesto() ?></th>
+	</tbody>
 </table>
 </div>
 </div>

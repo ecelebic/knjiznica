@@ -31,7 +31,7 @@
 	 
 <form>
 <fieldset>
-<legend>Pretraži</legend>
+<legend>Pretraži članove</legend>
   <div class="row">
     <div class="large-12 columns">
       <label>

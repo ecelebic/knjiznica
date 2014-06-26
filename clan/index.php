@@ -27,10 +27,10 @@
             <li><a href="index.php"><span>Član</span></a></li>
      </ul>
 	 
-	 
-Član<br/>
+
 	 
 <form>
+<legend>Pristupni podaci</legend>
   <div class="row">
     <div class="large-12 columns">
       <label>Pretraži

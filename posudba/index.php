@@ -27,9 +27,10 @@
             <li><a href="../clan/index.php"><span>Član</span></a></li>
      </ul>
 	 
-Posudba<br/>
+
 	 
 <form>
+<legend>Pristupni podaci</legend>
   <div class="row">
     <div class="large-12 columns">
       <label>Pretraži

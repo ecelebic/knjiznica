@@ -27,10 +27,10 @@
             <li><a href="../posudba/index.php"><span>Posudba</span></a></li>
             <li><a href="../clan/index.php"><span>Član</span></a></li>
      </ul>
-	 
-Knjiga<br/>
+
 
 <form>
+<legend>Pristupni podaci</legend>
   <div class="row">
     <div class="large-12 columns">
       <label>Pretraži

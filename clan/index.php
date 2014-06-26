@@ -30,19 +30,20 @@
 
 	 
 <form>
-<legend>Pristupni podaci</legend>
+<fieldset>
+<legend>Pretraži</legend>
   <div class="row">
     <div class="large-12 columns">
-      <label>Pretraži
+      <label>
         <input type="text" />
       </label>
     </div>
   </div>
 </form>
 
-Dodaj novog člana
-
 <form>
+<fieldset>
+<legend>Dodaj novog člana</legend>
   <div class="row">
     <div class="large-12 columns">
       <label>
@@ -63,6 +64,7 @@ Dodaj novog člana
 	  <a href="#" class="button green">Dodaj</a>
 	</div>
   </div>
+</fieldset>
 </form>  
 
 

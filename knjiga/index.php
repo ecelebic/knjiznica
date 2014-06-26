@@ -42,8 +42,10 @@
   </fieldset>
 </form>
 
-Upiši novu knjigu
+
 <form>
+<fieldset>
+<legend>Upiši novu knjigu</legend>
   <div class="row">
     <div class="large-12 columns">
       <label>
@@ -64,6 +66,7 @@ Upiši novu knjigu
 <a href="#" class="button green">Upiši</a>
     </div>
   </div>
+  </fieldset>
 </form>	
 
 

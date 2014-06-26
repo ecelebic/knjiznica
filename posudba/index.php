@@ -30,20 +30,22 @@
 
 	 
 <form>
-<legend>Pristupni podaci</legend>
+<fieldset>
+<legend>Pretraži</legend>
   <div class="row">
     <div class="large-12 columns">
-      <label>Pretraži
+      <label>
         <input type="text" />
       </label>
     </div>
   </div>
+</fieldset>
 </form>
 
 
-
-Nova posudba<br/>
-<br/>
+<form>
+<fieldset>
+<legend>Nova posudba</legend>
 Datum posudbe<br/>
 
 <div class="input-append date" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
@@ -76,6 +78,9 @@ Knjiga<br/>
 </label>
 </div>
 </div>
+</fieldset>
+</form>
+
 <a href="#" class="button green">Gotovo</a>
 
 

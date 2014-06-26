@@ -35,7 +35,7 @@
   <div class="row">
     <div class="large-12 columns">
       <label>
-        <input type="text" />
+        <input type="text" placeholder="Upiši ime, prezime ili fakultet člana"/>
       </label>
     </div>
   </div>

@@ -35,7 +35,7 @@
   <div class="row">
     <div class="large-12 columns">
       <label>
-        <input type="text" />
+        <input type="text" placeholder="Upiši naslov knjige ili autora" />
       </label>
     </div>
   </div>

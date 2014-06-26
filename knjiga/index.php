@@ -1,7 +1,7 @@
 <?php
     include "../class/knjiga.php";
     
-    $sifra=$_GET["sifra"];
+    $a=$_GET["sifra"];
     $a=new knjiga($sifra);
     
 ?>

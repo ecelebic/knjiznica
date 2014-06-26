@@ -95,7 +95,12 @@ Knjiga<br/>
 		<th>Član</th>							
 		</tr>
 	</thead>
-	<tbody></tbody>
+	<tbody>
+	<th><?php echo $a->vratidatumPosudbe() ?></th>
+	<th><?php echo $a->vratidatumPovratka() ?></th>
+	<th><?php echo $a->vratiKnjigu() ?></th>
+	<th><?php echo $a->vratiClana() ?></th>
+	</tbody>
 </table>
 </div>
 </div>

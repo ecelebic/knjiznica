@@ -49,13 +49,13 @@
   <div class="row">
     <div class="large-12 columns">
       <label>
-        <input type="text" placeholder="Naslov knjige" value="<?php echo $a->vratiNaslov() ?>" />
+        <input type="text" placeholder="Naslov knjige" />
       </label>
 	  <label>
-        <input type="text" placeholder="Autor knjige" value="<?php echo $a->vratiAutora() ?>" />
+        <input type="text" placeholder="Autor knjige"  />
       </label>
 	  <label>
-        <input type="text" placeholder="Godina izdanja knjige" value="<?php echo $a->vratiGodinuIzdanja() ?>" />
+        <input type="text" placeholder="Godina izdanja knjige" />
       </label> 
 	  <label>Dostupnost knjige u knjižnici</label>
       <input type="radio" name="pokemon" value="Red" id="pokemonRed">
@@ -77,8 +77,8 @@
 		<tr>
 		<th value="<?php echo $a->vratiNaslov() ?>">Naslov</th>
 		<th value="<?php echo $a->vratiAutora() ?>">Autor</th>
-		<th value="<?php echo $a->vratiGodinuIzdanja() ?>">Godina izdanja</th>
-		<th value="<?php echo $a->vratiDostupnostKnjige() ?>">Dostupnost knjige</th>
+		<th  value="<?php echo $a->vratiGodinuIzdanja() ?>">Godina izdanja</th>
+		<th value="<?php echo $a->vratiGodinuIzdanja() ?>">Dostupnost knjige</th>
         </tr>
 	</thead>
 	<tbody></tbody>

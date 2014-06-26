@@ -53,12 +53,4 @@ class knjiga
     }
 
 
-
-	public function __construct($sifra) {
-		$data = $sifra -> array();
-
-	$prvaknjiga = new Knjiga();
-	$naslov->name = "Ema";
-	$name = $prviclan->name;
-	}
 }

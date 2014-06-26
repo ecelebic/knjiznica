@@ -83,7 +83,7 @@
 	</thead>
 	<tbody>
 	
-	<th value="<?php echo $a->vratiNaslov() ?>"><?php echo $a->vratiNaslov() ?></th>
+	<th><?php echo $a->vratiNaslov() ?></th>
 	<th value="<?php echo $a->vratiAutora() ?>">Autor</th>
 	<th  value="<?php echo $a->vratiGodinuIzdanja() ?>">Godina izdanja</th>
     <th value="<?php echo $a->vratiGodinuIzdanja() ?>">Dostupnost knjige</th>

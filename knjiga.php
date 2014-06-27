@@ -24,10 +24,4 @@ if(isset($_GET['pretraga_naslov']) && (isset($_GET['pretraga_autor']))){
 
 
 
-
-
-
-
-
-
 $tpl->display('knjiga.tpl.php');

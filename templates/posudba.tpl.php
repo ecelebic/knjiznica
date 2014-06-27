@@ -1,7 +1,7 @@
 <?php include 'header.tpl.php'; ?>
 
 <div class="row">    
-<div class="large-12 columns">
+<div class="large-12 medium-12 small-12 columns">
 <div class="panel">
 <?php include 'meni.tpl.php'; ?>
 	 
@@ -9,7 +9,7 @@
 <fieldset>
 <legend>Pretraži posudbe</legend>
   <div class="row">
-    <div class="large-12 columns">
+    <div class="large-12 medium-12 small-12 columns">
       <label>
         <input type="text" placeholder="Upiši datum posudbe, knjigu ili člana" />
       </label>
@@ -39,7 +39,7 @@ Datum povratka<br/>
 
 Knjiga<br/>
 <div class="row">
-    <div class="large-12 columns">
+    <div class="large-12 medium-12 small-12 columns">
 <label>
         <input type="text" />
 </label>
@@ -48,7 +48,7 @@ Knjiga<br/>
 
 Član<br/>
 <div class="row">
-    <div class="large-12 columns">
+    <div class="large-12 medium-12 small-12 columns">
 <label>
         <input type="text" />
 </label>
@@ -61,14 +61,14 @@ Knjiga<br/>
 
 
 <div class="row">
-<div class="large-12 columns">
+<div class="large-12 medium-12 small-12 columns">
 <table>
 	<thead>
 		<tr>
-		<th>Datum posudbe</th>
-		<th>Datum povratka</th>
-		<th>Knjiga</th>
-		<th>Član</th>							
+		<th><?php echo $this->rezultati['datumPosudbe']; ?></th>
+		<th><?php echo $this->rezultati['datumPovratka']; ?></th>
+		<th><?php echo $this->rezultati['clan']; ?></th>
+		<th><?php echo $this->rezultati['knjiga']; ?></th>							
 		</tr>
 	</thead>
 	<tbody>

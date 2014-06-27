@@ -1,7 +1,7 @@
 <?php include 'header.tpl.php'; ?>
 
 <div class="row">    
-<div class="large-12 columns">
+<div class="large-12 medium-12 small-12 columns">
 <div class="panel">
 
     <?php include 'meni.tpl.php'; ?>
@@ -10,7 +10,7 @@
 <fieldset>
 <legend>Pretraži katalog</legend>
   <div class="row">
-    <div class="large-12 columns">
+    <div class="large-12 medium-12 small-12 columns">
       <label>
         <input id="pretraga_naslov" name="pretraga_naslov" type="text" placeholder="Naslov knjige" />
       </label> <br/>
@@ -29,15 +29,15 @@
         <fieldset>
         <legend>Prikaz rezultata</legend>
         <div class="row">
-        <div class="large-12 columns">
+        <div class="large-12 medium-12 small-12 columns">
         <table>
                 <thead>
                     <?php foreach ($this->rezultati as $key => $value): ?>
                         <tr>
                         <th><?php echo $this->rezultati['naslov']; ?></th>
                         <th><?php echo $this->rezultati['autor']; ?></th>
-                        <th>Godina izdanja</th>
-                        <th>Dostupnost knjige</th>
+                        <th><?php echo $this->rezultati['godinaIzdanja']; ?></th>
+                        <th><?php echo $this->rezultati['dostupnostKnjige']; ?></th>
                         </tr>                    
                     <?php endforeach; ?>
                 </thead>

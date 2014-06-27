@@ -48,15 +48,15 @@
 
 
 <div class="row">
-<div class="large-12 columns">
+<div class="large-12 medium-12 small-12 columns">
 <table>
 	<thead>
 		<tr>
-		<th>Naslov</th>
-		<th>Autor</th>
-		<th>Godina izdanja</th>
-		<th>Dostupnost knjige</th>
-        </tr>
+                        <th><?php echo $this->rezultati['naslov']; ?></th>
+                        <th><?php echo $this->rezultati['autor']; ?></th>
+                        <th><?php echo $this->rezultati['godinaIzdanja']; ?></th>
+                        <th><?php echo $this->rezultati['dostupnostKnjige']; ?></th>
+                </tr>
 	</thead>
 	<tbody>
 	

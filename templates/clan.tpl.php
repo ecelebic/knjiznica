@@ -46,15 +46,15 @@
 </form>
     
     <div class="row">
-<div class="large-12 columns">
+<div class="large-12 medium-12 small-12 columns">
 <table>
 	<thead>
 		<tr>
-		<th>Ime</th>
-		<th>Prezime</th>
-		<th>Fakultet</th>
-		<th>Kontakt</th>
-        <th>Mjesto</th>		
+		<th><?php echo $this->rezultati['ime']; ?></th>
+		<th><?php echo $this->rezultati['prezime']; ?></th>
+		<th><?php echo $this->rezultati['fakultet']; ?></th>
+		<th><?php echo $this->rezultati['kontakt']; ?></th>
+                <th><?php echo $this->rezultati['mjesto']; ?></th>		
 		</tr>
 	</thead>
 	<tbody>

@@ -30,7 +30,7 @@
         <legend>Prikaz rezultata</legend>
         <div class="row">
         <div class="large-12 medium-12 small-12 columns">
-        <table>
+            <table class="catalog">
                 <thead>
                     <?php foreach ($this->rezultati as $key => $value): ?>
                         <tr>

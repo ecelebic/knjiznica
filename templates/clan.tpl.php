@@ -7,16 +7,17 @@
 <?php include 'meni.tpl.php'; ?>
 
     
-<form>
+<form method="get" name="pretraga_form" id="pretraga_form">
 <fieldset>
 <legend>Pretraži članove</legend>
   <div class="row">
     <div class="large-12 columns">
       <label>
-        <input type="text" placeholder="Upiši ime, prezime ili fakultet člana"/>
+        <input id="pretraga_clana" name="pretraga_clana" type="text"placeholder="Upiši ime, prezime ili fakultet člana"/>
       </label>
     </div>
   </div>
+</fieldset>
 </form>
 
 <form>
@@ -44,33 +45,39 @@
   </div>
 </fieldset>
 </form>
+
     
-    <div class="row">
-<div class="large-12 medium-12 small-12 columns">
-<table>
+<form>
+    <fieldset>
+    <legend>Prikaz rezultata</legend>    
+<div class="row">
+<div class="large-12">
+    <table class="clan">
 	<thead>
-		<tr>
-		<th><?php echo $this->rezultati['ime']; ?></th>
-		<th><?php echo $this->rezultati['prezime']; ?></th>
-		<th><?php echo $this->rezultati['fakultet']; ?></th>
-		<th><?php echo $this->rezultati['kontakt']; ?></th>
-                <th><?php echo $this->rezultati['mjesto']; ?></th>		
-		</tr>
+            <tr>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Fakultet</th>
+            <th>Kontakt</th>
+            <th>Mjesto</th>		
+            </tr>
 	</thead>
 	<tbody>
-	<th></th>
-	<th></th>
-	<th></th>
-	<th></th>	
-	<th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>	
+            <th></th>
 	</tbody>
 </table>
 </div>
 </div>
+</form>
+</fieldset>
     
     
     
 </div>  
- </div>   
- </div>
+</div>   
+</div>
 <?php include 'footer.tpl.php'; ?>

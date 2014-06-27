@@ -23,4 +23,7 @@ if(isset($_GET['pretraga_ime']) && isset($_GET['pretraga_prezime']) && isset($_G
         }
 }
 
+$tpl->assign('title', $title);
+$tpl->assign('rezultati', $rezultati);
+
 $tpl->display('clan.tpl.php');

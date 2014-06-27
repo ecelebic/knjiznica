@@ -61,14 +61,14 @@ Knjiga<br/>
 
 
 <div class="row">
-<div class="large-12 medium-12 small-12 columns">
-<table>
+<div class="large-12 columns">
+    <table class="posudba">
 	<thead>
 		<tr>
-		<th><?php echo $this->rezultati['datumPosudbe']; ?></th>
-		<th><?php echo $this->rezultati['datumPovratka']; ?></th>
-		<th><?php echo $this->rezultati['clan']; ?></th>
-		<th><?php echo $this->rezultati['knjiga']; ?></th>							
+		<th>Datum posudbe</th>
+		<th>Datum povratka</th>
+		<th>Knjiga<</th>
+		<th>Član</th>							
 		</tr>
 	</thead>
 	<tbody>

@@ -18,10 +18,12 @@ if(isset($_GET['pretraga_naslov']) && (isset($_GET['pretraga_autor']))){
     
     if($naslov != '' || $autor != '') {        
         $p = new Pretraga();
+        
         $rezultati = $p->pretragaKnjiga($naslov, $autor);
     }
 }
 
-
+$tpl->assign('title', $title);
+$tpl->assign('rezultati', $rezultati);
 
 $tpl->display('knjiga.tpl.php');

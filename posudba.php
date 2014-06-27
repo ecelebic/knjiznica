@@ -23,4 +23,7 @@ if($datumPosudbe != '' || $knjiga != '' || $clan != '') {
     }    
 }
 
+$tpl->assign('title', $title);
+$tpl->assign('rezultati', $rezultati);
+
 $tpl->display('posudba.tpl.php');

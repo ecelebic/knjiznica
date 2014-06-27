@@ -46,21 +46,22 @@
 </fieldset>
 </form>
 
-    
+<?php if(count($this->rezultati) > 0): ?>   
 <form>
     <fieldset>
     <legend>Prikaz rezultata</legend>    
-<div class="row">
-<div class="large-12">
+
     <table class="clan">
 	<thead>
+            <?php foreach ($this->rezultati as $key => $value): ?>
             <tr>
-            <th>Ime</th>
-            <th>Prezime</th>
-            <th>Fakultet</th>
-            <th>Kontakt</th>
-            <th>Mjesto</th>		
+            <th><?php echo $this->rezultati['ime']; ?></th>
+            <th><?php echo $this->rezultati['prezime']; ?></th>
+            <th><?php echo $this->rezultati['fakultet']; ?></th>
+            <th><?php echo $this->rezultati['kontakt']; ?></th>
+            <th><?php echo $this->rezultati['mjesto']; ?></th>		
             </tr>
+            <?php endforeach; ?>
 	</thead>
 	<tbody>
             <th></th>
@@ -70,12 +71,9 @@
             <th></th>
 	</tbody>
 </table>
-</div>
-</div>
-</form>
 </fieldset>
-    
-    
+</form>  
+<?php endif; ?>    
     
 </div>  
 </div>   

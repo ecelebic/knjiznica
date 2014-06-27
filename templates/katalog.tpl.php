@@ -1,7 +1,7 @@
 <?php include 'header.tpl.php'; ?>
 
 <div class="row">    
-<div class="large-12 medium-12 small-12 columns">
+<div class="large-12">
 <div class="panel">
 
     <?php include 'meni.tpl.php'; ?>
@@ -9,8 +9,7 @@
 <form method="get" name="pretraga_form" id="pretraga_form">
 <fieldset>
 <legend>Pretraži katalog</legend>
-  <div class="row">
-    <div class="large-12 medium-12 small-12 columns">
+  
       <label>
         <input id="pretraga_naslov" name="pretraga_naslov" type="text" placeholder="Naslov knjige" />
       </label> <br/>
@@ -19,8 +18,7 @@
       </label>
 	  <br/>
         <input type="submit" class="button green" value="Pretraži"/>
-    </div>
-  </div>
+    
   </fieldset>
 </form>
 
@@ -28,8 +26,7 @@
         <form>
         <fieldset>
         <legend>Prikaz rezultata</legend>
-        <div class="row">
-        <div class="large-12 medium-12 small-12 columns">
+        
             <table class="catalog">
                 <thead>
                     <?php foreach ($this->rezultati as $key => $value): ?>
@@ -50,8 +47,7 @@
 
                 </tbody>
         </table>
-        </div>
-        </div> 
+        
         </fieldset>
         </form>    
     <?php endif; ?>

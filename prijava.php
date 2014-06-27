@@ -1,49 +1,15 @@
-<!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Knjižnica</title>
-    <link rel="stylesheet" href="css/foundation.css" />
-    <link rel="stylesheet" href="css/stil.css" />
-  </head>
-  <body>
+<?php
 
-<div class="row">    
-<div class="large-12 columns">
-<div class="panel">
+require_once('class/savant/Savant3.php');
 
-    <ul class="menu">
-            <li><a href="prijava.php"><span>Prijava</span></a></li>
-            <li><a href="index.html"><span>Katalog</span></a></li>
-            <li><a href="knjiga.php"><span>Knjiga</span></a></li>
-            <li><a href="posudba.php"><span>Posudba</span></a></li>
-            <li><a href="clan.php"><span>Član</span></a></li>
+$tpl = new Savant3(
+    array(
+        'template_path' => 'templates'
+    )
+);
 
-        </ul>
-	 
-	 
+$title = 'Prijava';
 
-	 
+$tpl->assign('title', $title);
 
-
- <div id="autorizacijaForma">
-  
-  <form action="">
-			<fieldset>
-			<legend>Pristupni podaci</legend>
-			<label for="email">Email</label>
-			<input type="text" name="email" id="email" value="ecelebic@ffos.hr"/>
-			<label for="lozinka">Lozinka</label>
-			<input type="password" name="lozinka" id="lozinka" value="emaknjiznica"/>
-			<a id="autoriziraj"class="button green">Autoriziraj</a>
-			</fieldset>
-  </form>
-  	<p id="porukaGreske"></p>
-
-</div>  
-</div>    
-</div> 
-</div>
-</body>
-</html>
+$tpl->display('prijava.tpl.php');

@@ -1,17 +1,17 @@
 <?php include 'header.tpl.php'; ?>
 
 <div class="row">    
-<div class="large-12 medium-12 small-12 columns">
+<div class="large-12">
 <div class="panel">
 <?php include 'meni.tpl.php'; ?>
 	 
-<form>
+ <form method="get" name="pretraga_form" id="pretraga_form">
 <fieldset>
 <legend>Pretraži posudbe</legend>
   <div class="row">
-    <div class="large-12 medium-12 small-12 columns">
+    <div class="large-12">
       <label>
-        <input type="text" placeholder="Upiši datum posudbe, knjigu ili člana" />
+        <input id="pretraga_datumKnjigaClan" name="pretraga_datumKnjigaClan" type="text" placeholder="Upiši datum posudbe, knjigu ili člana" />
       </label>
     </div>
   </div>
@@ -39,7 +39,7 @@ Datum povratka<br/>
 
 Knjiga<br/>
 <div class="row">
-    <div class="large-12 medium-12 small-12 columns">
+    <div class="large-12">
 <label>
         <input type="text" />
 </label>
@@ -48,7 +48,7 @@ Knjiga<br/>
 
 Član<br/>
 <div class="row">
-    <div class="large-12 medium-12 small-12 columns">
+    <div class="large-12">
 <label>
         <input type="text" />
 </label>
@@ -61,15 +61,18 @@ Knjiga<br/>
 
 
 <div class="row">
-<div class="large-12 columns">
+<div class="columns">
+    <?php if(count($this->rezultati) > 0): ?>
     <table class="posudba">
 	<thead>
+            <?php foreach ($this->rezultati as $key => $value): ?>
 		<tr>
-		<th>Datum posudbe</th>
-		<th>Datum povratka</th>
-		<th>Knjiga<</th>
-		<th>Član</th>							
+		<th><?php echo $this->rezultati['datumPosudbe']; ?></th>
+		<th><?php echo $this->rezultati['datumPovratka']; ?></th>
+		<th><?php echo $this->rezultati['knjiga']; ?><</th>
+		<th><?php echo $this->rezultati['clan']; ?></th>							
 		</tr>
+                <?php endforeach; ?>
 	</thead>
 	<tbody>
 	<th></th>
@@ -78,6 +81,7 @@ Knjiga<br/>
 	<th></th>
 	</tbody>
 </table>
+    <?php endif; ?>
 </div>
 </div>
  

@@ -9,11 +9,11 @@
     
 <div class="row">    
 <div class="large-12 medium-9 small-3 columns">    
-<form>
+<form method="get" id="pretraga_form" name="pretraga_form">
 <fieldset>
 <legend>Pretraži knjige</legend>
         <label>
-        <input type="text" placeholder="Upiši naslov knjige ili autora" />
+        <input id="pretraga_naslovAutor" name="pretraga_naslovAutor" type="text" placeholder="Upiši naslov knjige ili autora" />
       </label>
       </fieldset>
 </form>
@@ -22,7 +22,7 @@
 
     
 <div class="row">    
-<div class="large-12 medium-9 small-3 columns">    
+<div class="large-12" >    
 <form>
 <fieldset>
 <legend>Upiši novu knjigu</legend>
@@ -49,26 +49,30 @@
 </div>
 </div>
 
+    
 <div class="row">    
-<div class="large-12 medium-9 small-3 columns"> 
+<div class="large-12" >
+<?php if(count($this->rezultati) > 0): ?>    
 <form>
 <fieldset>
 <legend>Prikaz rezultata</legend>
 <table class="knjiga">
 	<thead>
+            <?php foreach ($this->rezultati as $key => $value): ?>
 		<tr>
-                        <th>Naslov</th>
-                        <th>Autor</th>
-                        <th>Godina izdanja</th>
-                        <th>Dostupnost knjige</th>
+                        <th><?php echo $this->rezultati['naslov']; ?></th>
+                        <th><?php echo $this->rezultati['autor']; ?></th>
+                        <th><?php echo $this->rezultati['godina izdanja']; ?></th>
+                        <th><?php echo $this->rezultati['dostupnost knjige']; ?></th>
                 </tr>
+             <?php endforeach; ?>    
 	</thead>
 	<tbody>
 	
-	<th>NASLOV 1</th>
-	<th>Ema</th>
-	<th>2009</th>
-        <th>da</th>
+	<th></th>
+	<th></th>
+	<th></th>
+        <th></th>
 	
 	</tbody>
 </table>
@@ -76,6 +80,7 @@
 </form>
 </div>
 </div>
+<?php endif; ?>
 
     
 </div>    

@@ -1,4 +1,4 @@
-
+<?php include_once ('session.php')?>
 <?php include 'header.tpl.php'; ?>
 
 <div class="row">    

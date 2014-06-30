@@ -1,3 +1,4 @@
+<?php include_once ('session.php')?>
 <?php include_once('class/operater.php') ?>
 
 <?php include 'header.tpl.php'; ?>
@@ -14,7 +15,7 @@
 			<label for="email">Email</label>
 			<input type="text" name="email" id="email" value="ecelebic@ffos.hr"/>
 			<label for="lozinka">Lozinka</label>
-			<input type="password" name="lozinka" id="lozinka" value="emaknjiznica"/>
+			<input type="password" name="lozinka" id="lozinka" value="9ee1039925"/>
 			<input type="submit" name="prijava" class="button green" value="Autoriziraj"/>
 			</fieldset>
   </form>

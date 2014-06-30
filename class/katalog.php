@@ -1,6 +1,6 @@
 <?php
 
-class katalog 
+class Katalog 
 {
 	const TABLE_NAME = 'knjiga';
 

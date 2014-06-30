@@ -1,79 +1,50 @@
-
 <?php include 'header.tpl.php'; ?>
+
 <div class="row">    
-<div class="large-12 medium-9 small-3 columns">
+<div class="large-12">
 <div class="panel">
 
 
 <?php include 'meni.tpl.php'; ?>
 
     
-<div class="row">    
-<div class="large-12 medium-9 small-3 columns">    
-<form method="get" id="pretraga_form" name="pretraga_form">
+ <!--Ovo je specifično za stranicu-->  
+<form method="get" name="pretraga_form" id="pretraga_form" action="knjiga.php">
 <fieldset>
 <legend>Pretraži knjige</legend>
         <label>
-        <input id="pretraga_knjige" name="pretraga_knjige" type="text" placeholder="Upiši naslov knjige ili autora" />
+        <input id="pretraga_knjige" name="search" type="text" placeholder="Upiši naslov knjige ili autora" <?php if(isset($this->upit)): ?>value="<?php echo $this->upit ?>" <?php endif ?> />
       </label>
       </fieldset>
 </form>
-</div>
-</div>
+<!--Ovo je specifično za stranicu--> 
 
-    
-<div class="row">    
-<div class="large-12" >    
-<form>
-<fieldset>
-<legend>Upiši novu knjigu</legend>
-  
-      <label>
-        <input type="text" placeholder="Naslov knjige" />
-      </label>
-	  <label>
-        <input type="text" placeholder="Autor knjige"  />
-      </label>
-	  <label>
-        <input type="text" placeholder="Godina izdanja knjige" />
-      </label> 
-	  <label>Dostupnost knjige u knjižnici</label>
-      <input type="radio" name="pokemon" value="Red" id="pokemonRed">
-	  <label for="pokemonRed">DA</label>
-      <input type="radio" name="pokemon" value="Blue" id="pokemonBlue">
-	  <label for="pokemonBlue">NE</label>
-	  <br/>
-<input type="submit" class="button green" value="Upiši"/>
-  
-  </fieldset>
-</form>	
-</div>
-</div>
+<a href="novaKnjiga.php" class="button green" >Dodaj novu knjigu</a>
 
-    
-<div class="row">    
-<div class="large-12" >
 <?php if(count($this->rezultati) > 0): ?>    
 <form>
 <fieldset>
 <legend>Prikaz rezultata</legend>
 <table class="knjiga">
 	<thead>
-            <?php foreach ($this->rezultati as $key => $value): ?>
-		<tr>
-                        <th><?php echo $this->rezultati['naslov']; ?></th>
-                        <th><?php echo $this->rezultati['autor']; ?></th>
-                        <th><?php echo $this->rezultati['godina izdanja']; ?></th>
-                        <th><?php echo $this->rezultati['dostupnost knjige']; ?></th>
-                </tr>
-             <?php endforeach; ?>    
+            <tr>
+		<th>Naslov</th>
+                <th>Autor</th>
+                <th>Godina izdanja</th>
+                <th>Dostupnost</th>
+            </tr>    
 	</thead>
 	<tbody>
-	
-	<th></th>
-	<th></th>
-	<th></th>
-        <th></th>
+	<?php foreach ($this->rezultati as $rezultat): $knjiga = new Knjiga($rezultat['sifra']) ?>
+	<tr>
+            
+                        <td><?php echo $knjiga->vratiNaslov() ?></td>
+                        <td><?php echo $knjiga->vratiAutora() ?></td>
+                        <td><?php echo $knjiga->vratiGodinuIzdanja() ?></td>
+                        <td><?php echo $knjiga->vratiDostupnostKnjige() ?></td>
+            
+        </tr>
+        <?php endforeach;?>
 	
 	</tbody>
 </table>
@@ -81,10 +52,10 @@
 </form>
 </div>
 </div>
+</div>
 <?php endif; ?>
 
     
-</div>    
-</div>  
-</div>
+   
+
 <?php include 'footer.tpl.php'; ?>

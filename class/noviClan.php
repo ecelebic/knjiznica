@@ -2,8 +2,6 @@
 
 class Clan
 {
-	const TABLE_NAME = 'clan';
-
 	protected $sifra;
 	protected $ime;
 	protected $prezime;
@@ -16,11 +14,6 @@ class Clan
     	$pdo=new PDO("mysql:host=localhost;dbname=knjiznica","root","root");
         $pdo->exec("set names utf8;");
 
-        $izraz = $pdo->prepare("SELECT * FROM `clan` WHERE sifra=:sifra");
-
-        $izraz->execute(array(
-            'sifra' => $sifra
-        ));
 
 		$data = $izraz->fetch(PDO::FETCH_ASSOC);
 		$pdo = null; // close connection
@@ -32,27 +25,27 @@ class Clan
 		$this->mjesto = $data['mjesto'];	
     }
     
-    public function vratiIme()
+    public function dodajIme()
     {
         return $this->ime;
     }
     
-    public function vratiPrezime()
+    public function dodajPrezime()
     {
         return $this->prezime;
     }
     
-    public function vratiFakultet()
+    public function dodajFakultet()
     {
         return $this->fakultet;
     }
     
-    public function vratiKontakt()
+    public function dodajKontakt()
     {
         return $this->kontakt;
     }
     
-    public function vratiMjesto()
+    public function dodajMjesto()
     {
         return $this->mjesto;
     }

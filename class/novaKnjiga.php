@@ -1,9 +1,7 @@
 <?php
 
-class Knjiga 
+class Novaknjiga 
 {
-	const TABLE_NAME = 'knjiga';
-
 	protected $sifra;
 	protected $naslov;
 	protected $autor;
@@ -32,31 +30,26 @@ class Knjiga
 
 }
 
-    public function vratiNaslov() 
+    public function dodajNaslov() 
     {
         return $this->naslov;
     }
 
-    public function vratiAutora() 
+    public function dodajAutora() 
     {
         return $this->autor;
     }
     
-    public function vratiGodinuIzdanja() 
+    public function dodajGodinuIzdanja() 
     {
         return $this->godinaIzdanja;
     }
     
-    public function vratiDostupnostKnjige() 
+    public function dodajDostupnostKnjige() 
     {
         return $this->dostupnostKnjige;
     }
     
-    public function pretraga($naslov, $autor) {
-        
-        
-        
-    }
-
+    
 
 }

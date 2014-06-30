@@ -38,4 +38,16 @@ class Pretraga extends Baza
 
         return $sql->fetchAll(PDO::FETCH_ASSOC);
     }
+    
+    public function pretragaClana($upit)
+    {
+        $searchq = "%{$upit}%";
+        $sql = $this->db->prepare("SELECT sifra FROM `clan` WHERE ime LIKE :upit OR prezime LIKE :upit OR fakultet LIKE :upit");
+        $sql->execute(array(
+            ':upit' => $searchq,
+            )
+        );
+
+        return $sql->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

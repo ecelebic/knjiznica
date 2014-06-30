@@ -1,6 +1,6 @@
 <?php
 
-class clan
+class Clan
 {
 	const TABLE_NAME = 'clan';
 

@@ -1,4 +1,4 @@
-<div id="autorizacijaForma" class="reveal-modal" data-reveal>
+<div class="reveal-modal" data-reveal>
   
   
   <form action="">

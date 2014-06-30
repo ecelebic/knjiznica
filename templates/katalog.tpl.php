@@ -1,4 +1,3 @@
-<?php include_once ('session.php')?>
 <?php include 'header.tpl.php'; ?>
 
 <div class="row">    
@@ -37,7 +36,7 @@
                         <th><?php echo $this->rezultati['godinaIzdanja']; ?></th>
                         <th><?php echo $this->rezultati['dostupnostKnjige']; ?></th>
                         </tr>                    
-                    <?php endforeach; ?>
+                    <?php endforeach;?>
                 </thead>
                 <tbody>
 

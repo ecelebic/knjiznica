@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once('class/savant/Savant3.php');
 
 $tpl = new Savant3(

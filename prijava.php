@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require 'class/operater.php';
 
 if(isset($_POST['prijava'])){
@@ -12,6 +12,7 @@ if(isset($_POST['prijava'])){
     if ($status) {
         $_SESSION['prijavljen'] = true;
         header('Location: katalog.php');
+        
     } else {
         $_SESSION['prijavljen'] = false;
     }

@@ -1,4 +1,4 @@
-<?php include_once ('session.php')?>
+
 <?php include 'header.tpl.php'; ?>
 <div class="row">    
 <div class="large-12 columns">
@@ -14,7 +14,7 @@
   <div class="row">
     <div class="large-12 columns">
       <label>
-        <input id="pretraga_clana" name="pretraga_clana" type="text"placeholder="Upiši ime, prezime ili fakultet člana"/>
+        <input id="pretraga_clana" name="pretraga_clana" type="text" placeholder="Upiši ime, prezime ili fakultet člana"/>
       </label>
     </div>
   </div>

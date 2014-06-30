@@ -1,4 +1,4 @@
-<?php include_once ('session.php')?>
+
 <?php include 'header.tpl.php'; ?>
 <div class="row">    
 <div class="large-12 medium-9 small-3 columns">
@@ -14,7 +14,7 @@
 <fieldset>
 <legend>Pretraži knjige</legend>
         <label>
-        <input id="pretraga_naslovAutor" name="pretraga_naslovAutor" type="text" placeholder="Upiši naslov knjige ili autora" />
+        <input id="pretraga_knjige" name="pretraga_knjige" type="text" placeholder="Upiši naslov knjige ili autora" />
       </label>
       </fieldset>
 </form>

@@ -1,18 +1,9 @@
 <?php
 
-include_once('class/prijava.php');
+include_once('class/baza.php');
 
-class Operater{
-
-    private $db;
-    
-
-    public function __construct () {
-        $this->db = new Prijava();
-        $this->db = $this->db->dbConnect();
-    }
-
-
+class Operater extends Baza
+{
     public function Prijava($email, $lozinka){
         $status = false;
         

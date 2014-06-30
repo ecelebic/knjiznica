@@ -10,7 +10,7 @@ if (isset($_SESSION['prijavljen'])) {
 <?php if(!$user): ?>
             <li><a href="prijava.php"><span>Prijava</span></a></li>
 <?php endif ?>
-            <li><a href="index.html"><span>Katalog</span></a></li>
+            <li><a href="katalog.php"><span>Katalog</span></a></li>
 <?php if ($user): ?>
             <li><a href="knjiga.php"><span>Knjiga</span></a></li>
             <li><a href="posudba.php"><span>Posudba</span></a></li>

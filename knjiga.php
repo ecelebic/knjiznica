@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+require_once 'class/pretraga.php';
 require_once('class/savant/Savant3.php');
 
 $tpl = new Savant3(
@@ -11,15 +12,14 @@ $tpl = new Savant3(
 $title = 'Knjiga';
 $rezultati = array();
 
-if(isset($_GET['pretraga_naslov']) && (isset($_GET['pretraga_autor']))){
+if(isset($_GET['search'])) {
+    // Validacija
+    $upit = trim($_GET['search']);
     
-    $naslov = trim($_GET['pretraga_naslov']);
-    $autor = trim($_GET['pretraga_autor']);
-    
-    if($naslov != '' || $autor != '') {        
+    if($upit) {        
         $p = new Pretraga();
-        
-        $rezultati = $p->pretragaKnjiga($naslov, $autor);
+        $rezultati = $p->pretragaKnjiga($upit);
+        $tpl->assign('upit', $upit);
     }
 }
 

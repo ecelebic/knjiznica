@@ -6,15 +6,12 @@
 
     <?php include 'meni.tpl.php'; ?>
 
-<form method="get" name="pretraga_form" id="pretraga_form">
+<form method="get" name="pretraga_form" id="pretraga_form" action="katalog.php">
 <fieldset>
 <legend>Pretraži katalog</legend>
   
       <label>
-        <input id="pretraga_naslov" name="pretraga_naslov" type="text" placeholder="Naslov knjige" />
-      </label> <br/>
-	  <label>
-        <input id="pretraga_autor" name="pretraga_autor" type="text" placeholder="Autor knjige"  />
+        <input id="pretraga_naslov" name="search" type="text" placeholder="upit" <?php if(isset($this->upit)): ?>value="<?php echo $this->upit ?>" <?php endif ?>/>
       </label>
 	  <br/>
         <input type="submit" class="button green" value="Pretraži"/>
@@ -29,22 +26,22 @@
         
             <table class="catalog">
                 <thead>
-                    <?php foreach ($this->rezultati as $key => $value): ?>
-                        <tr>
-                        <th><?php echo $this->rezultati['naslov']; ?></th>
-                        <th><?php echo $this->rezultati['autor']; ?></th>
-                        <th><?php echo $this->rezultati['godinaIzdanja']; ?></th>
-                        <th><?php echo $this->rezultati['dostupnostKnjige']; ?></th>
-                        </tr>                    
-                    <?php endforeach;?>
+                    <tr>
+                        <th>Naslov</th>
+                        <th>Autor</th>
+                        <th>Godina izdanja</th>
+                        <th>Dostupnost</th>
+                    </tr>          
                 </thead>
                 <tbody>
-
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-
+<?php foreach ($this->rezultati as $rezultat): ?>
+                    <tr>
+                        <td><?php echo $rezultat['naslov']; ?></td>
+                        <td><?php echo $rezultat['autor']; ?></td>
+                        <td><?php echo $rezultat['godinaIzdanja']; ?></td>
+                        <td><?php echo $rezultat['dostupnostKnjige']; ?></td>
+                    </tr>                    
+<?php endforeach;?>
                 </tbody>
         </table>
         

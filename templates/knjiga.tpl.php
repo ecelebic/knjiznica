@@ -8,7 +8,7 @@
 <?php include 'meni.tpl.php'; ?>
 
     
-   
+ <!--Ovo je specifično za stranicu-->  
 <form method="get" name="pretraga_form" id="pretraga_form" action="knjiga.php">
 <fieldset>
 <legend>Pretraži knjige</legend>
@@ -17,39 +17,9 @@
       </label>
       </fieldset>
 </form>
+<!--Ovo je specifično za stranicu--> 
 
-
-
-    
-<div class="row">    
-<div class="large-12" >    
-<form>
-<fieldset>
-<legend>Upiši novu knjigu</legend>
-  
-      <label>
-        <input type="text" placeholder="Naslov knjige" />
-      </label>
-	  <label>
-        <input type="text" placeholder="Autor knjige"  />
-      </label>
-	  <label>
-        <input type="text" placeholder="Godina izdanja knjige" />
-      </label> 
-	  <label>Dostupnost knjige u knjižnici</label>
-      <input type="radio" name="pokemon" value="Red" id="pokemonRed">
-	  <label for="pokemonRed">DA</label>
-      <input type="radio" name="pokemon" value="Blue" id="pokemonBlue">
-	  <label for="pokemonBlue">NE</label>
-	  <br/>
-<input type="submit" class="button green" value="Upiši"/>
-  
-  </fieldset>
-</form>	
-</div>
-</div>
-
-    
+<a href="novaKnjiga.php" class="button green" >Dodaj novu knjigu</a>
 
 <?php if(count($this->rezultati) > 0): ?>    
 <form>

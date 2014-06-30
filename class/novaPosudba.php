@@ -1,9 +1,8 @@
 <?php
 
-class Posudba
+class Novaposudba
 {
-	const TABLE_NAME = 'posudba';
-
+	
 	protected $sifra;
 	protected $datumPosudbe;
 	protected $datumPovratka;
@@ -15,12 +14,6 @@ class Posudba
     	$pdo=new PDO("mysql:host=localhost;dbname=knjiznica","root","root");
         $pdo->exec("set names utf8;");
 
-        $izraz = $pdo->prepare("SELECT * FROM `posudba` WHERE sifra=:sifra");
-
-        $izraz->execute(array(
-            'sifra' => $sifra
-        ));
-
 		$data = $izraz->fetch(PDO::FETCH_ASSOC);
 		$pdo = null; // close connection
 
@@ -31,24 +24,24 @@ class Posudba
 		
 	    }
     
-    public function vratidatumPosudbe()
+    public function dodajdatumPosudbe()
     {
         return $this->datumPosudbe;
     }
     
-    public function vratidatumPovratka()
+    public function dodajdatumPovratka()
     {
         return $this->datumPovratka;
     }
     
     
-    public function vratiClana()
+    public function dodajClana()
     {
         return $this->clan;
     }
     
     
-    public function vratiKnjigu()
+    public function dodajKnjigu()
     {
         return $this->knjiga;
     }

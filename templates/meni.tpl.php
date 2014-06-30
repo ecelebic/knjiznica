@@ -16,5 +16,6 @@ if (isset($_SESSION['prijavljen'])) {
             <li><a href="posudba.php"><span>Posudba</span></a></li>
             <li><a href="clan.php"><span>Član</span></a></li>
             <li><a href="odjava.php"><span>Odjava</span></a></li>
+            
 <?php endif ?>
         </ul>

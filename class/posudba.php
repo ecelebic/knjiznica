@@ -1,6 +1,6 @@
 <?php
 
-class posudba
+class Posudba
 {
 	const TABLE_NAME = 'posudba';
 

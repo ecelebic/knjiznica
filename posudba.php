@@ -1,5 +1,7 @@
 <?php
-
+session_start();
+require_once 'class/pretraga.php';
+require_once 'class/posudba.php';
 require_once('class/savant/Savant3.php');
 
 $tpl = new Savant3(
@@ -11,16 +13,15 @@ $tpl = new Savant3(
 $title = 'Posudba';
 $rezultati = array();
 
-if(isset($_GET['pretraga_datumPosudbe']) && isset($_GET['pretraga_knjiga']) && isset($_GET['pretraga_clan'])) {
+if(isset($_GET['search'])) {
+    // Validacija
+    $upit = trim($_GET['search']);
     
-    $datumPosudbe = trim($_GET['pretraga_datumPosudbe']);
-    $knjiga = trim($_GET['pretraga_knjiga']);
-    $clan = trim($_GET['pretraga_clan']);
-    
-if($datumPosudbe != '' || $knjiga != '' || $clan != '') {        
+    if($upit) {        
         $p = new Pretraga();
-        $rezultati = $p->pretragaPosudbe($datumPosudbe, $knjiga, $clan);
-    }    
+        $rezultati = $p->pretragaPosudbe($upit);
+        $tpl->assign('upit', $upit);
+    }
 }
 
 $tpl->assign('title', $title);

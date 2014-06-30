@@ -34,12 +34,12 @@
                     </tr>          
                 </thead>
                 <tbody>
-<?php foreach ($this->rezultati as $rezultat): ?>
+<?php foreach ($this->rezultati as $rezultat): $knjiga = new Knjiga($rezultat['sifra']) ?>
                     <tr>
-                        <td><?php echo $rezultat['naslov']; ?></td>
-                        <td><?php echo $rezultat['autor']; ?></td>
-                        <td><?php echo $rezultat['godinaIzdanja']; ?></td>
-                        <td><?php echo $rezultat['dostupnostKnjige']; ?></td>
+                        <td><?php echo $knjiga->vratiNaslov() ?></td>
+                        <td><?php echo $knjiga->vratiAutora() ?></td>
+                        <td><?php echo $knjiga->vratiGodinuIzdanja() ?></td>
+                        <td><?php echo $knjiga->vratiDostupnostKnjige() ?></td>
                     </tr>                    
 <?php endforeach;?>
                 </tbody>

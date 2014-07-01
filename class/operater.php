@@ -13,8 +13,10 @@ class Operater extends Baza
             $st->bindParam(2,$lozinka);
             $st->execute();
 
-            if($st->rowCount() ==1){
-                $status = true;
+            if($st->rowCount() == 1){
+                $res = $st->fetch(PDO::FETCH_ASSOC);
+                
+                $status = $res['sifra'];
             }
         }
         

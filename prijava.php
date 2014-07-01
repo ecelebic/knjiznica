@@ -10,11 +10,7 @@ if(isset($_POST['prijava'])){
     $status = $object->Prijava($email, $lozinka);
     
     if ($status) {
-        $_SESSION['prijavljen'] = true;
-        header('Location: katalog.php');
-        
-    } else {
-        $_SESSION['prijavljen'] = false;
+        header('Location: katalog.php');   
     }
 }
 require_once('class/savant/Savant3.php');

@@ -1,6 +1,6 @@
 <?php
-if (isset($_SESSION['prijavljen'])) {
-    $user = $_SESSION['prijavljen'];
+if (isset($_SESSION['operater_sifra']) && $_SESSION['operater_sifra']) {
+    $user = $_SESSION['operater_sifra'];
 } else {
     $user = false;
 }

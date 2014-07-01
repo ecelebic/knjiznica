@@ -18,7 +18,7 @@
     
   </fieldset>
 </form>
-
+    
     <?php if(count($this->rezultati) > 0): ?>
         <form>
         <fieldset>

@@ -13,9 +13,9 @@ $tpl = new Savant3(
 $title = 'Posudba';
 $rezultati = array();
 
-if(isset($_GET['search'])) {
+if(isset($_GET['pretraga_posudbe'])) {
     // Validacija
-    $upit = trim($_GET['search']);
+    $upit = trim($_GET['pretraga_posudbe']);
     
     if($upit) {        
         $p = new Pretraga();

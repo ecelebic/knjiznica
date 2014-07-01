@@ -1,6 +1,6 @@
 <?php
 
-class Posudba
+class Posudba extends Model
 {
 const TABLE_NAME = 'posudba';
 
@@ -71,6 +71,23 @@ $pdo = null; // close connection
     {
         return $this->prezime;
     }
+    
+     public function setDatumPosudbe($datumPosudbe) {
+        $this->data['datumPosudbe'] = $datumPosudbe;
+    } 
+    
+     public function setDatumPovratka($datumPovratka) {
+        $this->data['datumPovratka'] = $datumPovratka;
+    }
+    
+     public function setClan($clan) {
+        $this->data['clan'] = $clan;
+    }
+    
+     public function setKnjiga($knjiga) {
+        $this->data['knjiga'] = $knjiga;
+    }
+    
 }
 
 

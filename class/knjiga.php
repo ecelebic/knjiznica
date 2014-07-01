@@ -1,6 +1,6 @@
 <?php
 
-class Knjiga 
+class Knjiga extends Model
 {
 	const TABLE_NAME = 'knjiga';
 
@@ -9,6 +9,7 @@ class Knjiga
 	protected $autor;
 	protected $godinaIzdanja;
 	protected $dostupnostKnjige;
+        protected $tableName = 'knjiga';
 	
 	public function __construct($sifra) 
 	{
@@ -53,9 +54,23 @@ class Knjiga
     }
     
     public function pretraga($naslov, $autor) {
-        
-        
-        
+       
+    }
+    
+    public function setNaslov($naslov) {
+        $this->data['naslov'] = $naslov;
+    }
+    
+    public function setAutor($autor) {
+        $this->data['autor'] = $autor;
+    }
+    
+    public function setGodinaIzdanja($godinaIzdanja) {
+        $this->data['godinaIzdanja'] = $godinaIzdanja;
+    }
+    
+    public function setDostupnostKnjige($dostupnostKnjige) {
+        $this->data['dostupnostKnjige'] = $dostupnostKnjige;
     }
 
 

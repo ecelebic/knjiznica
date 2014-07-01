@@ -1,6 +1,6 @@
 <?php
 
-class Clan
+class Clan extends Model
 {
 	const TABLE_NAME = 'clan';
 
@@ -57,7 +57,26 @@ class Clan
         return $this->mjesto;
     }
     
-
+     public function setIme($ime) {
+        $this->data['ime'] = $ime;
+    }
+    
+    public function setPrezime($prezime) {
+        $this->data['prezime'] = $prezime;
+    }
+    
+    public function setFakultet($fakultet) {
+        $this->data['fakultet'] = $fakultet;
+    }
+    
+    public function setKontakt($kontakt) {
+        $this->data['kontakt'] = $kontakt;
+    }
+    
+    public function setMjesto($mjesto) {
+        $this->data['mjesto'] = $$mjesto;
+    }
+    
 }
 
 

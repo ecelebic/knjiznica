@@ -18,7 +18,7 @@
 </fieldset>
 </form>
 
-<a href="novaPosudba.php" class="button green" >Dodaj novu posudbu</a>
+<a href="novaPosudba.php" class="button green">Dodaj novu posudbu</a>
 
   <?php if(count($this->rezultati) > 0): ?>
     <table class="posudba">
@@ -26,9 +26,10 @@
             <tr>
 		<th>Datum posudbe</th>
 		<th>Datum povratka</th>
-                <th>Član</th>
-		<th>Knjiga</th>
-									
+                <th>Naslov knjige</th>
+                <th>Autor knjige</th>
+                <th>Ime člana</th>
+                <th>Prezime člana</th>
             </tr>
                 
 	</thead>
@@ -37,8 +38,10 @@
             <tr>    
                 <td><?php echo $posudba->vratidatumPosudbe()?></td>
                 <td><?php echo $posudba->vratidatumPovratka()?></td>
-                <td><?php echo $posudba->vratiClana()?></td>
-                <td><?php echo $posudba->vratiKnjigu()?></td>
+                <td><?php echo $posudba->vratiNaslovKnjige()?></td>                
+                <td><?php echo $posudba->vratiAutoraKnjige()?></td>
+                <td><?php echo $posudba->vratiImeClana()?></td>                
+                <td><?php echo $posudba->vratiPrezimeClana()?></td>
             </tr>
             <?php endforeach;?>
 	</tbody>

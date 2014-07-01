@@ -2,34 +2,43 @@
 
 class Posudba
 {
-	const TABLE_NAME = 'posudba';
+const TABLE_NAME = 'posudba';
 
-	protected $sifra;
-	protected $datumPosudbe;
-	protected $datumPovratka;
-	protected $clan;
-        protected $knjiga;
+protected $sifra;
+protected $datumPosudbe;
+protected $datumPovratka;
+protected $ime;
+protected $prezime;
+protected $naslov;
+protected $autor;
 
-	public function __construct($sifra)
-	{
-    	$pdo=new PDO("mysql:host=localhost;dbname=knjiznica","root","root");
+public function __construct($sifra)
+{
+     $pdo=new PDO("mysql:host=localhost;dbname=knjiznica","root","root");
         $pdo->exec("set names utf8;");
 
-        $izraz = $pdo->prepare("SELECT * FROM `posudba` WHERE sifra=:sifra");
+        $izraz = $pdo->prepare("select a.datumPosudbe, a.datumPovratka, b.naslov, b.autor, c.ime, c.prezime
+                                from posudba a
+                                inner join knjiga b
+                                on a.knjiga=b.sifra
+                                inner join clan c   
+                                on a.clan=c.sifra WHERE c.sifra=:sifra");
 
         $izraz->execute(array(
             'sifra' => $sifra
         ));
 
-		$data = $izraz->fetch(PDO::FETCH_ASSOC);
-		$pdo = null; // close connection
+$data = $izraz->fetch(PDO::FETCH_ASSOC);
+$pdo = null; // close connection
 
-		$this->datumPosudbe = $data['datumPosudbe'];
-		$this->datumPovratka = $data['datumPovratka'];
-                $this->clan = $data['clan'];
-		$this->knjiga = $data['knjiga'];
-		
-	    }
+            $this->datumPosudbe = $data['datumPosudbe'];
+            $this->datumPovratka = $data['datumPovratka'];
+            $this->ime = $data['ime'];
+            $this->prezime = $data['prezime'];
+            $this->naslov = $data['naslov'];
+            $this->autor = $data['autor'];
+
+}
     
     public function vratidatumPosudbe()
     {
@@ -42,19 +51,26 @@ class Posudba
     }
     
     
-    public function vratiClana()
+    public function vratiNaslovKnjige()
     {
-        return $this->clan;
+        return $this->naslov;
     }
     
     
-    public function vratiKnjigu()
+    public function vratiAutoraKnjige()
     {
-        return $this->knjiga;
+        return $this->autor;
     }
     
+     public function vratiImeClana()
+    {
+        return $this->ime;
+    }
     
-	
+     public function vratiPrezimeClana()
+    {
+        return $this->prezime;
+    }
 }
 
 

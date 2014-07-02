@@ -1,8 +1,9 @@
 <?php
 session_start();
 require_once 'class/model.php';
-require_once 'class/posudba.php';
+
 require_once'class/savant/Savant3.php';
+require_once 'class/posudba.php';
 
 $tpl = new Savant3(
     array(
@@ -16,11 +17,11 @@ if (isset($_POST['gotovo'])) {
     $clan = $_POST['clan'];
     $knjiga = $_POST['knjiga'];
     
-    $posudba = new Posudba();
+    $posudba = new Posudba(null);
     
     if ($datumPosudbe && $datumPovratka && $clan && $knjiga) {        
-        $posudba->setDatumPosudbe($datumPosudbe);
-        $posudba->setDatumPovratka($datumPovratka);
+        $posudba->setdatumPosudbe($datumPosudbe);
+        $posudba->setdatumPovratka($datumPovratka);
         $posudba->setClan($clan);
         $posudba->setKnjiga($knjiga);
         $posudba->save();

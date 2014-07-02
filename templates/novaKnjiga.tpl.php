@@ -23,7 +23,7 @@
         <input type="text" placeholder="Autor knjige" name="autor" />
       </label>
 	  <label>
-        <input type="text" placeholder="Godina izdanja knjige" name="godina"/>
+        <input type="text" placeholder="Godina izdanja knjige" name="godina" />
       </label> 
 	  <label>Dostupnost knjige u knjižnici</label>
       <input type="radio" name="pokemon" value="1" id="pokemonRed">

@@ -4,7 +4,7 @@ class Posudba extends Model
 {
     protected $tableName = 'posudba';
     
-    public function __construct($sifra) {
+    public function __construct($sifra=null) {
         //parent::__construct();
    
         $this->pdoConnection = new PDO("mysql:host=localhost;dbname=knjiznica","root","root");

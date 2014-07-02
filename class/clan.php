@@ -46,7 +46,7 @@ class Clan extends Model
     }
     
     public function setMjesto($mjesto) {
-        $this->data['mjesto'] = $$mjesto;
+        $this->data['mjesto'] = $mjesto;
     }
     
 }

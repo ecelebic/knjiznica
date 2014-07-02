@@ -1,7 +1,8 @@
 <?php
 session_start();
 require_once 'class/model.php';
-require_once('class/savant/Savant3.php');
+require_once'class/savant/Savant3.php';
+require_once 'class/clan.php';
 
 $tpl = new Savant3(
     array(
@@ -33,7 +34,7 @@ if (isset($_POST['dodaj'])) {
     }
 }
 
-$title = 'Član';
+$title = 'Dodaj novog člana';
 
 
 $tpl->assign('title', $title);

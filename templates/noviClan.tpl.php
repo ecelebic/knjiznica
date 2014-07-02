@@ -5,8 +5,10 @@
 
 
 <?php include 'meni.tpl.php'; ?>
-
-<form method="post" action="clan.php">
+<?php if (isset($this->notify)): ?>
+    <p><?php echo $this->notify ?></p>
+<?php endif ?>
+<form method="post" action="noviClan.php">                                      
 <fieldset>
 <legend>Dodaj novog člana</legend>
   <div class="row">
@@ -14,7 +16,7 @@
       <label>
         <input type="text" placeholder="Ime člana" name="ime" />
       </label>
-	  <label>
+      <label>
         <input type="text" placeholder="Prezime člana" name="prezime" />
       </label>
 	  <label>

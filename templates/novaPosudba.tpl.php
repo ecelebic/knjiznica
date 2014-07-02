@@ -45,10 +45,10 @@
 </label>
 </div>
 </div>
-</fieldset>
+</fieldset><input type="submit" class="button green" value="Gotovo" name="gotovo"/>
 </form>
 
-<input type="submit" class="button green" value="Gotovo" name="gotovo"/>
+
 
 </div>
 </div>

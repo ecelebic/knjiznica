@@ -18,7 +18,6 @@
     
   </fieldset>
 </form>
-    
     <?php if(count($this->rezultati) > 0): ?>
         <form>
         <fieldset>
@@ -36,10 +35,10 @@
                 <tbody>
 <?php foreach ($this->rezultati as $rezultat): $knjiga = new Knjiga($rezultat['sifra']) ?>
                     <tr>
-                        <td><?php echo $knjiga->vratiNaslov() ?></td>
-                        <td><?php echo $knjiga->vratiAutora() ?></td>
-                        <td><?php echo $knjiga->vratiGodinuIzdanja() ?></td>
-                        <td><?php echo $knjiga->vratiDostupnostKnjige() ?></td>
+                        <td><?php echo $knjiga->getNaslov() ?></td>
+                        <td><?php echo $knjiga->getAutor() ?></td>
+                        <td><?php echo $knjiga->getGodinaIzdanja() ?></td>
+                        <td><?php echo $knjiga->getDostupnostKnjige() ?></td>
                     </tr>                    
 <?php endforeach;?>
                 </tbody>

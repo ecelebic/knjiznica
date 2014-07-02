@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'class/clan.php';
+require_once 'class/model.php';
 require_once('class/savant/Savant3.php');
 
 $tpl = new Savant3(
@@ -8,6 +8,30 @@ $tpl = new Savant3(
         'template_path' => 'templates'
     )
 );
+
+if (isset($_POST['dodaj'])) {
+    $ime = $_POST['ime'];
+    $prezime = $_POST['prezime'];
+    $fakultet = $_POST['fakultet'];
+    $kontakt = $_POST['kontakt'];
+    $mjesto = $_POST['mjesto'];
+    $clan = new Clan();
+
+    if ($ime && $prezime && $fakultet && $kontakt && $mjesto) {        
+        $clan->setIme($ime);
+        $clan->setPrezime($prezime);
+        $clan->setFakultet($fakultet);
+        $clan->setKontakt($kontakt);
+        $clan->setMjesto($mjesto);
+        $clan->save();
+    }
+     
+    if ($clan->getSifra()) {
+        $tpl->assign('notify', 'Clan je spremljen');
+    } else {
+        $tpl->assign('notify', 'Clan nije spremljen');
+    }
+}
 
 $title = 'Član';
 

@@ -36,12 +36,12 @@
 	<tbody>
             <?php foreach ($this->rezultati as $rezultat): $posudba = new Posudba($rezultat['sifra']) ?>
             <tr>    
-                <td><?php echo $posudba->vratidatumPosudbe()?></td>
-                <td><?php echo $posudba->vratidatumPovratka()?></td>
-                <td><?php echo $posudba->vratiNaslovKnjige()?></td>                
-                <td><?php echo $posudba->vratiAutoraKnjige()?></td>
-                <td><?php echo $posudba->vratiImeClana()?></td>                
-                <td><?php echo $posudba->vratiPrezimeClana()?></td>
+                <td><?php echo $posudba->getdatumPosudbe()?></td>
+                <td><?php echo $posudba->getdatumPovratka()?></td>
+                <td><?php echo $posudba->getNaslovKnjige()?></td>                
+                <td><?php echo $posudba->getAutorKnjige()?></td>
+                <td><?php echo $posudba->getImeClana()?></td>                
+                <td><?php echo $posudba->getPrezimeClana()?></td>
             </tr>
             <?php endforeach;?>
 	</tbody>

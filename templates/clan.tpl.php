@@ -43,11 +43,11 @@
 	<tbody>
 <?php foreach ($this->rezultati as $rezultat): $clan = new Clan($rezultat['sifra']) ?>
           <tr>
-              <td><?php echo $clan->vratiIme()?></td>
-              <td><?php echo $clan->vratiPrezime()?></td>
-              <td><?php echo $clan->vratiFakultet()?></td>
-              <td><?php echo $clan->vratiKontakt()?></td>	
-              <td><?php echo $clan->vratiMjesto()?></td>
+              <td><?php echo $clan->getIme()?></td>
+              <td><?php echo $clan->getPrezime()?></td>
+              <td><?php echo $clan->getFakultet()?></td>
+              <td><?php echo $clan->getKontakt()?></td>	
+              <td><?php echo $clan->getMjesto()?></td>
           </tr>
 <?php endforeach;?>          
 	</tbody>

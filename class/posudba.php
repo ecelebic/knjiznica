@@ -2,74 +2,61 @@
 
 class Posudba extends Model
 {
-const TABLE_NAME = 'posudba';
-
-protected $sifra;
-protected $datumPosudbe;
-protected $datumPovratka;
-protected $ime;
-protected $prezime;
-protected $naslov;
-protected $autor;
-
-public function __construct($sifra)
-{
-     $pdo=new PDO("mysql:host=localhost;dbname=knjiznica","root","root");
-        $pdo->exec("set names utf8;");
-
-        $izraz = $pdo->prepare("select a.datumPosudbe, a.datumPovratka, b.naslov, b.autor, c.ime, c.prezime
-                                from posudba a
-                                inner join knjiga b
-                                on a.knjiga=b.sifra
-                                inner join clan c   
-                                on a.clan=c.sifra WHERE c.sifra=:sifra");
+    protected $tableName = 'posudba';
+    
+    public function __construct($sifra) {
+        //parent::__construct();
+   
+        $this->pdoConnection = new PDO("mysql:host=localhost;dbname=knjiznica","root","root");
+        $this->pdoConnection->exec("set names utf8;");	    
+	    	    
+	    if(is_null($sifra)) {
+	        return;
+	    }
+        $izraz = $this->pdoConnection->prepare("select a.datumPosudbe, a.datumPovratka, b.naslov, b.autor, c.ime, c.prezime
+                                                from posudba a
+                                                inner join knjiga b
+                                                on a.knjiga=b.sifra
+                                                inner join clan c
+                                                on a.clan=c.sifra WHERE a.sifra=:sifra");
 
         $izraz->execute(array(
             'sifra' => $sifra
         ));
 
-$data = $izraz->fetch(PDO::FETCH_ASSOC);
-$pdo = null; // close connection
 
-            $this->datumPosudbe = $data['datumPosudbe'];
-            $this->datumPovratka = $data['datumPovratka'];
-            $this->ime = $data['ime'];
-            $this->prezime = $data['prezime'];
-            $this->naslov = $data['naslov'];
-            $this->autor = $data['autor'];
-
-}
-    
-    public function vratidatumPosudbe()
+    $this->data = $izraz->fetch(PDO::FETCH_ASSOC);
+    }
+     
+       
+    public function getdatumPosudbe()
     {
-        return $this->datumPosudbe;
+        return $this->data['datumPosudbe'];
     }
     
-    public function vratidatumPovratka()
+    public function getdatumPovratka()
     {
-        return $this->datumPovratka;
+        return $this->data['datumPovratka'];
     }
     
-    
-    public function vratiNaslovKnjige()
+    public function getNaslovKnjige()
     {
-        return $this->naslov;
+        return $this->data['naslov'];
+    }
+        
+    public function getAutorKnjige()
+    {
+        return $this->data['autor'];
     }
     
-    
-    public function vratiAutoraKnjige()
+     public function getImeClana()
     {
-        return $this->autor;
+        return $this->data['ime'];
     }
     
-     public function vratiImeClana()
+     public function getPrezimeClana()
     {
-        return $this->ime;
-    }
-    
-     public function vratiPrezimeClana()
-    {
-        return $this->prezime;
+        return $this->data['prezime'];
     }
     
      public function setDatumPosudbe($datumPosudbe) {

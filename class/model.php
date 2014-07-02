@@ -7,22 +7,24 @@ class Model {
     
     protected $pdoConnection = null;
     
-    public function __construct($sifra) {
+    public function __construct($sifra=null) {
         
         $this->pdoConnection = new PDO("mysql:host=localhost;dbname=knjiznica","root","root");
         $this->pdoConnection->exec("set names utf8;");	    
 	    	    
-	    if(is_null($sifra)) {
-	        return;
-	    }
-
-        $izraz = $this->pdoConnection->prepare("SELECT * FROM `'.$this->tableName.'` WHERE sifra=:sifra");
+        if(is_null($sifra)) {
+            $this->data['sifra'] = null;
+            return;
+        }
+        
+        $izraz = $this->pdoConnection->prepare("SELECT * FROM `{$this->tableName}` WHERE sifra=:sifra");
 
         $izraz->execute(array(
             'sifra' => $sifra
         ));
 
-		$this->data = $izraz->fetch(PDO::FETCH_ASSOC);
+
+        $this->data = $izraz->fetch(PDO::FETCH_ASSOC);
     }
     
     public function getSifra() {
@@ -50,23 +52,24 @@ class Model {
             
             $sql .= ' WHERE sifra = '.$this->data['sifra'];
             
-            // Posalješ MySQLu kroz PDO
+            $this->pdoConnection->exec($sql);
             
         } else {
             // Radi insert
             $last = end($this->data);
             
             $sql = 'INSERT INTO '.$this->tableName;
+            $values = array();
+            $columns = array();
             
             foreach ($this->data as $columnName => $columnValue) {
-                $sql .= ' SET '.$columnName.'="'.$columnValue.'"';
-                
-                if($columnValue != $last) {
-                    $sql .= ',';
-                }
+                $values[] = $columnValue;
+                $columns[] = $columnName;
             }  
-                        
-            // Posalješ MySQLu kroz PDO
+            
+            $sql .= "(`" . implode("`,`", $columns) . "`) VALUES ('" . implode("','", $values) . "')";
+            
+            $this->pdoConnection->exec($sql);
             
             $this->setSifra($this->pdoConnection->lastInsertId());
         } 
@@ -76,8 +79,7 @@ class Model {
     public function delete() {
         if(isset($this->data['sifra'])) {
             // Radi delete
-            $last = end($this->data);
-            
+                    
             $sql = 'DELETE '.$this->tableName;
             
             $sql .= ' WHERE sifra = '.$this->data['sifra'];

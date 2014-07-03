@@ -10,7 +10,7 @@ $tpl = new Savant3(
     )
 );
 
-if (isset($_POST['spremi'])) {
+if (isset($_POST['promijeni'])) {
     $naslov = $_POST['naslov'];
     $autor = $_POST['autor'];
     $godina = $_POST['godina'];

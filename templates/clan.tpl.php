@@ -36,7 +36,8 @@
             <th>Prezime</th>
             <th>Fakultet</th>
             <th>Kontakt</th>
-            <th>Mjesto</th>		
+            <th>Mjesto</th>
+            <td>Promijeni/Obriši</td>
             </tr>
             
 	</thead>
@@ -48,6 +49,8 @@
               <td><?php echo $clan->getFakultet()?></td>
               <td><?php echo $clan->getKontakt()?></td>	
               <td><?php echo $clan->getMjesto()?></td>
+              <td><a href="#" class="button green" >Promijeni člana</a>
+                            <a href="#" class="button green" >Obriši člana</a></td>
           </tr>
 <?php endforeach;?>          
 	</tbody>

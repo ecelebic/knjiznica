@@ -30,6 +30,7 @@
                 <th>Autor knjige</th>
                 <th>Ime člana</th>
                 <th>Prezime člana</th>
+                <td>Promijeni/Obriši</td>
             </tr>
                 
 	</thead>
@@ -42,6 +43,8 @@
                 <td><?php echo $posudba->getAutorKnjige()?></td>
                 <td><?php echo $posudba->getImeClana()?></td>                
                 <td><?php echo $posudba->getPrezimeClana()?></td>
+                <td><a href="#" class="button green" >Promijeni posudbu</a>
+                            <a href="#" class="button green" >Obriši posudbu</a></td>
             </tr>
             <?php endforeach;?>
 	</tbody>

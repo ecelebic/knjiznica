@@ -7,9 +7,9 @@
 <?php if (isset($this->notify)): ?>
     <p><?php echo $this->notify ?></p>
 <?php endif ?>
-<form method="post" action="novaPosudba.php">
+<form method="post" action="updatePosudba.php">
 <fieldset>
-<legend>Promijeni podatke o posudbi</legend>
+<legend>Promijeni posudbu</legend>
 
 
 <div class="row">

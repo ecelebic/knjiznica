@@ -13,7 +13,7 @@
   <div class="row">
     <div class="large-12 columns">
       <label>
-        <input id="pretraga_naslov" name="search" type="text" placeholder="upit" <?php if(isset($this->upit)): ?>value="<?php echo $this->upit ?>" <?php endif ?>/>
+        <input id="pretraga_naslov" name="search" type="text" placeholder="Upiši ime ili prezime člana" <?php if(isset($this->upit)): ?>value="<?php echo $this->upit ?>" <?php endif ?>/>
       </label>
     </div>
   </div>

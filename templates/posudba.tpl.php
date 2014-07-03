@@ -11,7 +11,7 @@
   <div class="row">
     <div class="large-12">
       <label>
-        <input id="pretraga_posudbe" name="pretraga_posudbe" type="text" placeholder="upit"<?php if(isset($this->upit)): ?>value="<?php echo $this->upit ?>" <?php endif ?> />
+        <input id="pretraga_posudbe" name="pretraga_posudbe" type="text" placeholder="Upiši datum posudbe"<?php if(isset($this->upit)): ?>value="<?php echo $this->upit ?>" <?php endif ?> />
       </label>
     </div>
   </div>

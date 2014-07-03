@@ -10,6 +10,11 @@ $tpl = new Savant3(
     )
 );
 
+if (isset($_GET['sifra'])) {
+    $sifra = $_GET['sifra'];
+    $knjiga = new Knjiga($sifra);
+}
+
 
 $title = 'Promijeni knjigu';
 

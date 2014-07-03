@@ -40,18 +40,18 @@ class Model {
             // Radi update
             $last = end($this->data);
             
-            $sql = 'UPDATE '.$this->tableName;
+            $sql = "UPDATE {$this->tableName} SET ";
             
             foreach ($this->data as $columnName => $columnValue) {
-                $sql .= ' SET '.$columnName.'="'.$columnValue.'"';
+                $sql .= "`{$columnName}`='{$columnValue}' ";
                 
                 if($columnValue != $last) {
-                    $sql .= ',';
+                    $sql .= ', ';
                 }
             } 
             
-            $sql .= ' WHERE sifra = '.$this->data['sifra'];
-            
+            $sql .= "WHERE `sifra` = '{$this->data['sifra']}'";
+           
             $this->pdoConnection->exec($sql);
             
         } else {

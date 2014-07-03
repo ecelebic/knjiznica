@@ -11,12 +11,12 @@
 <legend>Pretraži katalog</legend>
   
       <label>
-        <input id="pretraga_naslov" name="search" type="text" placeholder="upit" <?php if(isset($this->upit)): ?>value="<?php echo $this->upit ?>" <?php endif ?>/>
+        <input id="pretraga_naslov" name="search" type="text" placeholder="Upiši naslov knjige ili autora" <?php if(isset($this->upit)): ?>value="<?php echo $this->upit ?>" <?php endif ?>/>
       </label>
 	  <br/>
         <input type="submit" class="button green" value="Pretraži"/>
     
-  </fieldset>
+</fieldset>
 </form>
     <?php if(count($this->rezultati) > 0): ?>
         <form>
@@ -49,7 +49,7 @@
     <?php endif; ?>
 	
 </div>  
- </div>   
- </div>
+</div>   
+</div>
     
 <?php include 'footer.tpl.php'; ?>

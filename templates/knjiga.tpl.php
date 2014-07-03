@@ -43,8 +43,10 @@
                         <td><?php echo $knjiga->getAutor() ?></td>
                         <td><?php echo $knjiga->getGodinaIzdanja() ?></td>
                         <td><?php echo $knjiga->getDostupnostKnjige() ?></td>
-                        <td><a href="updateKnjiga.php" class="button green" >Promijeni knjigu</a>
-                            <a href="#" class="button green" >Obriši knjigu</a></td>
+                        <td>
+                            <a href="novaKnjiga.php?sifra=<?php echo $rezultat['sifra'] ?>" class="button green" >Promijeni knjigu</a>
+                            <a href="#" class="button green" >Obriši knjigu</a>
+                        </td>
             
         </tr>
         <?php endforeach;?>

@@ -9,15 +9,22 @@ $tpl = new Savant3(
         'template_path' => 'templates'
     )
 );
+if (isset($_REQUEST['sifra'])) {
+    // update postojece knjige
+    $knjiga = new Knjiga($_REQUEST['sifra']);    
+} else {
+    // nova knjiga
+    $knjiga = new Knjiga();
+}
 
-if (isset($_POST['promijeni'])) {
+if (isset($_POST['spremi'])) {
+    //netko je kliknio na save dugme
     $naslov = $_POST['naslov'];
     $autor = $_POST['autor'];
     $godina = $_POST['godina'];
     $dostupnost = $_POST['pokemon'];
-    $knjiga = new Knjiga();
 
-    if ($naslov && $autor && $godina && $dostupnost) {        
+    if ($naslov && $autor && $godina && $dostupnost) {  
         $knjiga->setNaslov($naslov);
         $knjiga->setAutor($autor);
         $knjiga->setGodinaIzdanja($godina);
@@ -25,11 +32,21 @@ if (isset($_POST['promijeni'])) {
         $knjiga->save();
     }
      
+    // provjeris jel sve spremio
     if ($knjiga->getSifra()) {
         $tpl->assign('notify', 'Knjiga spremljena');
     } else {
         $tpl->assign('notify', 'Knjiga nije spremljena');
     }
+}
+
+if ($knjiga->getSifra()) {
+    // ako je knjiga ucitana
+    $tpl->assign('knjigaSifra', $knjiga->getSifra());
+    $tpl->assign('knjigaNaslov', $knjiga->getNaslov());
+    $tpl->assign('knjigaAutor', $knjiga->getAutor());
+    $tpl->assign('knjigaGodina', $knjiga->getGodinaIzdanja());
+    $tpl->assign('knjigaDostupnost', $knjiga->getDostupnostKnjige());
 }
 
 

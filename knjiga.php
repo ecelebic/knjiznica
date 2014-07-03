@@ -23,6 +23,15 @@ if(isset($_GET['search'])) {
         $rezultati = $p->pretragaKnjiga($upit);
         $tpl->assign('upit', $upit);
     }
+} else if(isset($_GET['delete'])) {
+    // pokusaj brisanja
+    $delete = $_GET['delete'];
+    $sifra = $_GET['sifra'];
+    
+    $knjiga = new Knjiga($sifra);
+    $knjiga->delete();
+    
+    
 }
 
 $tpl->assign('title', $title);

@@ -12,6 +12,7 @@
 <?php if (isset($this->notify)): ?>
     <p><?php echo $this->notify ?></p>
 <?php endif ?>
+    
 <form method="post" action="novaKnjiga.php">
 <fieldset>
     <legend>Upiši novu knjigu</legend>
@@ -19,15 +20,16 @@
     <?php if (isset($this->knjigaSifra)): ?>
         <input type="hidden" value="<?php echo $this->knjigaSifra ?>" name="sifra" />
     <?php endif ?>
+        
     <label for="naslov">Naslov knjige:</label>
     <input type="text" placeholder="Naslov knjige" id="naslov" name="naslov" <?php if(isset($this->knjigaNaslov)): ?> value="<?php echo $this->knjigaNaslov ?>"<?php endif ?> />
 
-    <label>
+    <label for="autor">Autor knjige:</label>
         <input type="text" placeholder="Autor knjige" id="autor" name="autor" <?php if(isset($this->knjigaAutor)): ?> value="<?php echo $this->knjigaAutor ?>"<?php endif ?> />
-      </label>
-	  <label>
+      
+    <label for="godina">Godina izdanja knjige:</label>
         <input type="text" placeholder="Godina izdanja knjige" name="godina" <?php if(isset($this->knjigaGodina)): ?> value="<?php echo $this->knjigaGodina ?>"<?php endif ?> />
-      </label> 
+      
 
     <span>Dostupnost knjige u knjižnici</span>
     <label for="pokemon-1">Da</label>

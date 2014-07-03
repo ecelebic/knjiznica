@@ -7,57 +7,65 @@
 
 <?php include 'meni.tpl.php'; ?>
 
-    
- <!--Ovo je specifično za stranicu-->  
+     
 <form method="get" name="pretraga_form" id="pretraga_form" action="knjiga.php">
 <fieldset>
+    
 <legend>Pretraži knjige</legend>
-        <label>
+
+    <label>
         <input id="pretraga_knjige" name="search" type="text" placeholder="Upiši naslov knjige ili autora" <?php if(isset($this->upit)): ?>value="<?php echo $this->upit ?>" <?php endif ?> />
-      </label>
-      </fieldset>
+    </label>
+
+</fieldset>
 </form>
-<!--Ovo je specifično za stranicu--> 
+
 
 <a href="novaKnjiga.php" class="button green" >Dodaj novu knjigu</a>
 
-<?php if(count($this->rezultati) > 0): ?>    
+
+<?php if(count($this->rezultati) > 0): ?>  
+
 <form>
 <fieldset>
 <legend>Prikaz rezultata</legend>
+
 <table class="knjiga">
-	<thead>
-            <tr>
-		<th>Naslov</th>
-                <th>Autor</th>
-                <th>Godina izdanja</th>
-                <th>Dostupnost</th>
-                <td>Promijeni/Obriši</td>
-            </tr>    
-	</thead>
-	<tbody>
+    <thead>
+        <tr>
+        <th>Naslov</th>
+        <th>Autor</th>
+        <th>Godina izdanja</th>
+        <th>Dostupnost</th>
+        <td>Promijeni/Obriši</td>
+        </tr>    
+    </thead>
+    
+    <tbody>
 	<?php foreach ($this->rezultati as $rezultat): $knjiga = new Knjiga($rezultat['sifra']) ?>
+        
 	<tr>
+        <td><?php echo $knjiga->getNaslov() ?></td>
+        <td><?php echo $knjiga->getAutor() ?></td>
+        <td><?php echo $knjiga->getGodinaIzdanja() ?></td>
+        <td><?php echo $knjiga->getDostupnostKnjige() ?></td>
+        <td>
+            <a href="novaKnjiga.php?sifra=<?php echo $rezultat['sifra'] ?>" class="button green" >Promijeni knjigu</a>
             
-                        <td><?php echo $knjiga->getNaslov() ?></td>
-                        <td><?php echo $knjiga->getAutor() ?></td>
-                        <td><?php echo $knjiga->getGodinaIzdanja() ?></td>
-                        <td><?php echo $knjiga->getDostupnostKnjige() ?></td>
-                        <td>
-                            <a href="novaKnjiga.php?sifra=<?php echo $rezultat['sifra'] ?>" class="button green" >Promijeni knjigu</a>
-                            <a href="#" class="button green" >Obriši knjigu</a>
-                        </td>
-            
+            <a href="knjiga.php?sifra=<?php echo $rezultat['sifra'] ?>&delete=true" class="button green" >Obriši knjigu</a>
+        </td>            
         </tr>
+        
         <?php endforeach;?>
 	
-	</tbody>
+    </tbody>
 </table>
 </fieldset>
 </form>
 </div>
 </div>
 </div>
+
 <?php endif; ?>
 
     

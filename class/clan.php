@@ -3,6 +3,7 @@
 class Clan extends Model
 {
     protected $tableName = 'clan';
+    
         
     public function getIme()
     {

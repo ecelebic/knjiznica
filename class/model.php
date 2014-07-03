@@ -79,10 +79,13 @@ class Model {
     public function delete() {
         if(isset($this->data['sifra'])) {
             // Radi delete
-                    
-            $sql = 'DELETE '.$this->tableName;
             
-            $sql .= ' WHERE sifra = '.$this->data['sifra'];
+            $sql = "DELETE FROM {$this->tableName} WHERE `sifra`='{$this->data['sifra']}'";
+                       
+            $this->pdoConnection->exec($sql);
+            
+            
+            
         
     }
 }

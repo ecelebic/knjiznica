@@ -3,7 +3,6 @@
 <div class="large-12 columns">
 <div class="panel">
 
-
 <?php include 'meni.tpl.php'; ?>
 
     
@@ -11,11 +10,11 @@
 <fieldset>
 <legend>Pretraži članove</legend>
   <div class="row">
-    <div class="large-12 columns">
-      <label>
-        <input id="pretraga_naslov" name="search" type="text" placeholder="Upiši ime ili prezime člana" <?php if(isset($this->upit)): ?>value="<?php echo $this->upit ?>" <?php endif ?>/>
-      </label>
-    </div>
+  <div class="large-12 columns">
+    <label>
+    <input id="pretraga_naslov" name="search" type="text" placeholder="Upiši ime ili prezime člana" <?php if(isset($this->upit)): ?>value="<?php echo $this->upit ?>" <?php endif ?>/>
+    </label>
+  </div>
   </div>
 </fieldset>
 </form>
@@ -25,10 +24,10 @@
 
 <?php if(count($this->rezultati) > 0): ?>  
 <form>
-    <fieldset>
-    <legend>Prikaz rezultata</legend>    
+<fieldset>
+<legend>Prikaz rezultata</legend>    
 
-    <table class="clan">
+<table class="clan">
 	<thead>
             
             <tr>
@@ -41,24 +40,30 @@
             </tr>
             
 	</thead>
+        
 	<tbody>
+            
 <?php foreach ($this->rezultati as $rezultat): $clan = new Clan($rezultat['sifra']) ?>
-          <tr>
-              <td><?php echo $clan->getIme()?></td>
-              <td><?php echo $clan->getPrezime()?></td>
-              <td><?php echo $clan->getFakultet()?></td>
-              <td><?php echo $clan->getKontakt()?></td>	
-              <td><?php echo $clan->getMjesto()?></td>
-              <td><a href="#" class="button green" >Promijeni člana</a>
-                            <a href="#" class="button green" >Obriši člana</a></td>
-          </tr>
-<?php endforeach;?>          
+            
+            <tr>
+            <td><?php echo $clan->getIme()?></td>
+            <td><?php echo $clan->getPrezime()?></td>
+            <td><?php echo $clan->getFakultet()?></td>
+            <td><?php echo $clan->getKontakt()?></td>	
+            <td><?php echo $clan->getMjesto()?></td>
+            <td>
+                <a href="noviClan.php?sifra=<?php echo $rezultat['sifra'] ?>" class="button green" >Promijeni člana</a>
+                
+                <a href="#" class="button green" >Obriši člana</a></td>
+            </tr>
+            
+<?php endforeach;?> 
+            
 	</tbody>
 </table>
 </fieldset>
 </form>  
-<?php endif; ?>    
-    
+<?php endif; ?>   
 </div>  
 </div>   
 </div>

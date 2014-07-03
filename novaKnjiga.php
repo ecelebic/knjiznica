@@ -9,11 +9,12 @@ $tpl = new Savant3(
         'template_path' => 'templates'
     )
 );
+
 if (isset($_REQUEST['sifra'])) {
-    // update postojece knjige
+    
     $knjiga = new Knjiga($_REQUEST['sifra']);    
 } else {
-    // nova knjiga
+    
     $knjiga = new Knjiga();
 }
 

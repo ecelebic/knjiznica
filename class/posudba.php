@@ -11,7 +11,8 @@ class Posudba extends Model
         $this->pdoConnection->exec("set names utf8;");	    
 	    	    
 	    if(is_null($sifra)) {
-	        return;
+               $this->data['sifra'] = null;
+	       return;
 	    }
         $izraz = $this->pdoConnection->prepare("select a.datumPosudbe, a.datumPovratka, b.naslov, b.autor, c.ime, c.prezime
                                                 from posudba a

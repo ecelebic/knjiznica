@@ -54,7 +54,7 @@
             <td>
                 <a href="noviClan.php?sifra=<?php echo $rezultat['sifra'] ?>" class="button green" >Promijeni člana</a>
                 
-                <a href="#" class="button green" >Obriši člana</a></td>
+                <a href="clan.php?sifra=<?php echo $rezultat['sifra'] ?>&delete=true" class="button green" >Obriši člana</a>
             </tr>
             
 <?php endforeach;?> 

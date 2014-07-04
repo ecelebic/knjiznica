@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once 'class/model.php';
-require_once'class/savant/Savant3.php';
+require_once 'class/savant/Savant3.php';
 require_once 'class/posudba.php';
 
 $tpl = new Savant3(
@@ -19,19 +19,21 @@ if (isset($_REQUEST['sifra'])) {
 }
 
 if (isset($_POST['promijeni'])) {
+    //netko je kliknio na save dugme
     $datumPosudbe = $_POST['datumPosudbe'];
     $datumPovratka = $_POST['datumPovratka'];
     $clan = $_POST['clan'];
     $knjiga = $_POST['knjiga'];
-    
-    if ($datumPosudbe && $datumPovratka && $clan && $knjiga) {        
-        $posudba->setdatumPosudbe($datumPosudbe);
-        $posudba->setdatumPovratka($datumPovratka);
+
+    if ($datumPosudbe && $datumPovratka && $clan && $knjiga) {  
+        $posudba->setDatumPosudbe($datumPosudbe);
+        $posudba->setDatumPovratka($datumPovratka);
         $posudba->setClan($clan);
         $posudba->setKnjiga($knjiga);
         $posudba->save();
     }
      
+    // provjeris jel sve spremio
     if ($posudba->getSifra()) {
         $tpl->assign('notify', 'Posudba spremljena');
     } else {
@@ -40,14 +42,12 @@ if (isset($_POST['promijeni'])) {
 }
 
 if ($posudba->getSifra()) {
-    
+    // ako je knjiga ucitana
     $tpl->assign('posudbaSifra', $posudba->getSifra());
-    $tpl->assign('posudbadatumPosudbe', $posudba->getdatumPosudbe());
-    $tpl->assign('posudbadatumPovratka', $posudba->getdatumPovratka());
-    $tpl->assign('posudbaclan', $posudba->getClan());
-    $tpl->assign('posudbaknjiga', $posudba->getKnjiga());
-    
-    
+    $tpl->assign('posudbaDatumPosudbe', $posudba->getdatumPosudbe());
+    $tpl->assign('posudbaDatumPovratka', $posudba->getdatumPovratka());
+    $tpl->assign('posudbaClan', $posudba->getClan());
+    $tpl->assign('posudbaKnjiga', $posudba->getKnjiga());
 }
 
 $title = 'Nova posudba';

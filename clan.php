@@ -23,6 +23,15 @@ if(isset($_GET['search'])) {
         $rezultati = $p->pretragaClana($upit);
         $tpl->assign('upit', $upit);
     }
+} else if(isset($_GET['delete'])) {
+    // pokusaj brisanja
+    $delete = $_GET['delete'];
+    $sifra = $_GET['sifra'];
+    
+    $clan = new Clan($sifra);
+    $clan->delete();
+    
+    
 }
 
 $tpl->assign('title', $title);

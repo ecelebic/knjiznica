@@ -5,6 +5,9 @@
 
 <?php include 'meni.tpl.php'; ?>
     
+    <div class="row">    
+<div class="large-12" > 
+    
 <?php if (isset($this->notify)): ?>
     <p><?php echo $this->notify ?></p>
 <?php endif ?>
@@ -51,15 +54,16 @@
            value="<?php echo $this->clanMjesto ?>"<?php endif ?> />
     <br/>
         
-    <input type="submit" class="button green" value="Dodaj" name="spremi"/>
+    <input type="submit" class="button green" value="Gotovo" name="spremi"/>
         
 </div>
 </div>
 </fieldset>
-</form>
-  
-    
-</div>  
-</div>   
+</form>	
+</div>
+</div>
+
+</div>
+</div>
 </div>
 <?php include 'footer.tpl.php'; ?>

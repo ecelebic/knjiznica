@@ -35,8 +35,8 @@ if (isset($_POST['spremi'])) {
         $clan->save();
     }
      
-    if ($clan->getSifra()) {
-        $tpl->assign('notify', 'Clan je spremljen');
+     if ($clan->getSifra()) {
+        $tpl->assign('notify', 'Clan spremljen');
     } else {
         $tpl->assign('notify', 'Clan nije spremljen');
     }

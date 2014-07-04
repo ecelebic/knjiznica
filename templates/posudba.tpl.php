@@ -11,16 +11,20 @@
   <div class="row">
     <div class="large-12">
       <label>
-        <input id="pretraga_posudbe" name="pretraga_posudbe" type="text" placeholder="Upiši datum posudbe"<?php if(isset($this->upit)): ?>value="<?php echo $this->upit ?>" <?php endif ?> />
+        <input id="pretraga_posudbe" name="search" type="text" placeholder="Pretraži posudbu" <?php if(isset($this->upit)): ?>value="<?php echo $this->upit ?>" <?php endif ?> />
       </label>
     </div>
   </div>
 </fieldset>
 </form>
 
-<a href="novaPosudba.php" class="button green">Dodaj novu posudbu</a>
+<a href="novaPosudba.php" class="button green" >Dodaj novu posudbu</a>
 
-  <?php if(count($this->rezultati) > 0): ?>
+<?php if(count($this->rezultati) > 0): ?>
+
+<form>
+<fieldset>
+<legend>Prikaz rezultata</legend>
     <table class="posudba">
 	<thead>
             <tr>
@@ -37,23 +41,28 @@
 	<tbody>
             <?php foreach ($this->rezultati as $rezultat): $posudba = new Posudba($rezultat['sifra']) ?>
             <tr>    
-                <td><?php echo $posudba->getdatumPosudbe()?></td>
-                <td><?php echo $posudba->getdatumPovratka()?></td>
+                <td><?php echo $posudba->getDatumPosudbe()?></td>
+                <td><?php echo $posudba->getDatumPovratka()?></td>
                 <td><?php echo $posudba->getNaslovKnjige()?></td>                
                 <td><?php echo $posudba->getAutorKnjige()?></td>
                 <td><?php echo $posudba->getImeClana()?></td>                
                 <td><?php echo $posudba->getPrezimeClana()?></td>
                 <td><a href="novaPosudba.php?sifra=<?php echo $rezultat['sifra'] ?>" class="button green" >Promijeni posudbu</a>
-                            <a href="#" class="button green" >Obriši posudbu</a></td>
+            
+                     <a href="posudba.php?sifra=<?php echo $rezultat['sifra'] ?>&delete=true" class="button green" >Obriši posudbu</a></td>
             </tr>
             <?php endforeach;?>
 	</tbody>
 </table>
-    <?php endif; ?>
+    </fieldset>
+</form>
 </div>
 </div>
- 
+</div>
 
-</div>
-     
+<?php endif; ?>
+
+    
+   
+
 <?php include 'footer.tpl.php'; ?>

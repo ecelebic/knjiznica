@@ -14,15 +14,24 @@ $tpl = new Savant3(
 $title = 'Posudba';
 $rezultati = array();
 
-if(isset($_GET['pretraga_posudbe'])) {
+if(isset($_GET['search'])) {
     // Validacija
-    $upit = trim($_GET['pretraga_posudbe']);
+    $upit = trim($_GET['search']);
     
     if($upit) {        
         $p = new Pretraga();
         $rezultati = $p->pretragaPosudbe($upit);
         $tpl->assign('upit', $upit);
     }
+} else if(isset($_GET['delete'])) {
+    // pokusaj brisanja
+    $delete = $_GET['delete'];
+    $sifra = $_GET['sifra'];
+    
+    $posudba = new Posudba($sifra);
+    $posudba->delete();
+    
+    
 }
 
 $tpl->assign('title', $title);

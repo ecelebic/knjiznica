@@ -39,21 +39,29 @@
 </div>
 </div>
 
+
 <div class="row">
 <div class="large-12">
 <label for="clan">Član:</label>
-<input type="text" id="clan" name="clan" <?php if(isset($this->posudbaClan)): ?> value="<?php echo $this->posudbaClan ?>"<?php endif ?> />
+<select name="Clanovi">
+<option id="clan" name="clan" <?php if(isset($this->posudbaClan)): ?> value="<?php echo $this->posudbaClan ?>"<?php endif ?> // php echo za članove</option>
+</select>
+</div>
+</div>
 
-</div>
-</div>
 
 <div class="row">
 <div class="large-12">
 <label for="knjiga">Knjiga:</label>
-<input type="text" id="knjiga" name="knjiga" <?php if(isset($this->posudbaKnjiga)): ?> value="<?php echo $this->posudbaKnjiga ?>"<?php endif ?> />
+<select name="Knjige">
+<option id="knjiga" name="knjiga" <?php if(isset($this->posudbaKnjiga)): ?> value="<?php echo $this->posudbaKnjiga ?>"<?php endif ?> //php echo za knjige</option>
+</select>
+</div>
+</div>        
 
-</div>
-</div>
+
+
+
 </fieldset>
 <input type="submit" class="button green" value="Promijeni" name="promijeni"/>
 </form>

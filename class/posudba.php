@@ -5,16 +5,17 @@ class Posudba extends Model
     protected $tableName = 'posudba';
     
     public function __construct($sifra=null) {
-        //parent::__construct();
+        parent::__construct();
    
         $this->pdoConnection = new PDO("mysql:host=localhost;dbname=knjiznica","root","root");
         $this->pdoConnection->exec("set names utf8;");	    
 	    	    
-	    if(is_null($sifra)) {
-               $this->data['sifra'] = null;
-	       return;
-	    }
-        $izraz = $this->pdoConnection->prepare("select a.datumPosudbe, a.datumPovratka, b.naslov, b.autor, c.ime, c.prezime
+        if(is_null($sifra)) {
+           $this->data['sifra'] = null;
+           return;
+        }
+        
+        $izraz = $this->pdoConnection->prepare("select a.sifra, a.datumPosudbe, a.datumPovratka, b.naslov, b.autor, c.ime, c.prezime
                                                 from posudba a
                                                 inner join knjiga b
                                                 on a.knjiga=b.sifra
@@ -29,7 +30,7 @@ class Posudba extends Model
     $this->data = $izraz->fetch(PDO::FETCH_ASSOC);
     }
      
-       
+           
     public function getdatumPosudbe()
     {
         return $this->data['datumPosudbe'];
@@ -39,17 +40,7 @@ class Posudba extends Model
     {
         return $this->data['datumPovratka'];
     }
-    
-    public function getNaslovKnjige()
-    {
-        return $this->data['naslov'];
-    }
         
-    public function getAutorKnjige()
-    {
-        return $this->data['autor'];
-    }
-    
      public function getImeClana()
     {
         return $this->data['ime'];
@@ -60,6 +51,17 @@ class Posudba extends Model
         return $this->data['prezime'];
     }
     
+    
+    public function getAutorKnjige()
+    {
+        return $this->data['autor'];
+    } 
+    
+    public function getNaslovKnjige()
+    {
+        return $this->data['naslov'];
+    }
+        
      public function setDatumPosudbe($datumPosudbe) {
         $this->data['datumPosudbe'] = $datumPosudbe;
     } 

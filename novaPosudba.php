@@ -12,7 +12,13 @@ $tpl = new Savant3(
 
 if (isset($_REQUEST['sifra'])) {
     // update postojece posudbe
-    $posudba = new Posudba($_REQUEST['sifra']);    
+    $posudba = new Posudba($_REQUEST['sifra']);
+
+    $tpl->assign('posudbaSifra', $posudba->getSifra());
+    $tpl->assign('posudbaDatumPosudbe', $posudba->getdatumPosudbe());
+    $tpl->assign('posudbaDatumPovratka', $posudba->getdatumPovratka());
+    $tpl->assign('posudbaClan', $posudba->getImeClana() . ' ' . $posudba->getPrezimeClana());
+    $tpl->assign('posudbaKnjiga', $posudba->getNaslovKnjige() . ' ' . $posudba->getAutorKnjige());
 } else {
     // nova posudba
     $posudba = new Posudba();
@@ -24,6 +30,7 @@ if (isset($_POST['promijeni'])) {
     $datumPovratka = $_POST['datumPovratka'];
     $clan = $_POST['clan'];
     $knjiga = $_POST['knjiga'];
+    
 
     if ($datumPosudbe && $datumPovratka && $clan && $knjiga) {  
         $posudba->setDatumPosudbe($datumPosudbe);
@@ -39,15 +46,6 @@ if (isset($_POST['promijeni'])) {
     } else {
         $tpl->assign('notify', 'Posudba nije spremljena');
     }
-}
-
-if ($posudba->getSifra()) {
-    // ako je knjiga ucitana
-    $tpl->assign('posudbaSifra', $posudba->getSifra());
-    $tpl->assign('posudbaDatumPosudbe', $posudba->getdatumPosudbe());
-    $tpl->assign('posudbaDatumPovratka', $posudba->getdatumPovratka());
-    $tpl->assign('posudbaClan', $posudba->getClan());
-    $tpl->assign('posudbaKnjiga', $posudba->getKnjiga());
 }
 
 $title = 'Nova posudba';

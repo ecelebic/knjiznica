@@ -55,7 +55,7 @@
     <br/>
         
     <input type="submit" class="button green" value="Gotovo" name="spremi"/>
-        
+    <a href="clan.php" class="button green" >Nazad</a>
 </div>
 </div>
 </fieldset>

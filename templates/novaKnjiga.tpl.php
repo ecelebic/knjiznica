@@ -40,6 +40,7 @@
 
 	  <br/>
 <input type="submit" class="button green" value="Upiši" name="spremi"/>
+<a href="knjiga.php" class="button green" >Nazad</a>
   
 </fieldset>
 </form>	

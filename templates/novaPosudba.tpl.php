@@ -73,7 +73,7 @@
 </div>
 
 <input type="submit" class="button green" value="Promijeni" name="promijeni"/>
-
+<a href="posudba.php" class="button green" >Nazad</a>
 
 </fieldset>
 </form>

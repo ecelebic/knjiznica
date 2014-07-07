@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once 'class/model.php';
+require_once 'class/posudbacollect.php';
 require_once 'class/pretraga.php';
 require_once 'class/posudba.php';
 require_once('class/savant/Savant3.php');
@@ -30,8 +31,13 @@ if(isset($_GET['search'])) {
     
     $posudba = new Posudba($sifra);
     $posudba->delete();
-    
-    
+}
+
+if(isset($_GET['list'])) {
+    //učitaj sve posudbe
+    $svePosudbe = new PosudbaCollection();
+    //pošalji templateu sveKnjige s vrijednošću $sveKnjige
+    $tpl->assign('svePosudbe', $svePosudbe->getData());
 }
 
 $tpl->assign('title', $title);

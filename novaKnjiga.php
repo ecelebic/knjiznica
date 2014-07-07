@@ -41,16 +41,6 @@ if (isset($_POST['spremi'])) {
     }
 }
 
-if ($knjiga->getSifra()) {
-    // ako je knjiga ucitana
-    $tpl->assign('knjigaSifra', $knjiga->getSifra());
-    $tpl->assign('knjigaNaslov', $knjiga->getNaslov());
-    $tpl->assign('knjigaAutor', $knjiga->getAutor());
-    $tpl->assign('knjigaGodina', $knjiga->getGodinaIzdanja());
-    $tpl->assign('knjigaDostupnost', $knjiga->getDostupnostKnjige());
-}
-
-
 
 $title = 'Dodaj novu knjigu';
 

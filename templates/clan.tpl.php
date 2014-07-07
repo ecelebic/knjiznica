@@ -19,8 +19,44 @@
 </fieldset>
 </form>
 
-<a href="noviClan.php" class="button green">Dodaj novog člana</a>    
-    
+<a href="noviClan.php" class="button green">Dodaj novog člana</a>  
+<a href="clan.php?list=all"class="button green" name="prikazi">Prikaži sve članove</a>
+
+<?php if(isset($this->sviClanovi)): ?> 
+<form>
+<fieldset>
+<legend>Prikaz rezultata</legend>
+
+<table>
+    <thead>
+        <tr>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Fakultet</th>
+        <th>Konakt</th>
+        <th>Mjesto</th>
+        </tr>    
+    </thead>
+      
+    <tbody>
+        <!-- Prođi sve clanove kao svakog posebno -->
+	<?php foreach ($this->sviClanovi as $clan): ?>
+        
+	<tr>
+        <td><?php echo $clan['ime'] ?></td>
+        <td><?php echo $clan['prezime'] ?></td>
+        <td><?php echo $clan['fakultet'] ?></td>
+        <td><?php echo $clan['kontakt'] ?></td>
+        <td><?php echo $clan['mjesto'] ?></td>
+        </tr>
+        
+        <?php endforeach;?>
+	
+    </tbody>
+</table>
+</fieldset>
+</form>
+<?php endif;?>
 
 <?php if(count($this->rezultati) > 0): ?>  
 <form>

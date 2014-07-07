@@ -19,6 +19,41 @@
 </form>
 
 <a href="novaPosudba.php" class="button green" >Dodaj novu posudbu</a>
+<a href="posudba.php?list=all"class="button green" name="prikazi">Prikaži sve posudbe</a>
+
+<?php if(isset($this->svePosudbe)): ?> 
+<form>
+<fieldset>
+<legend>Prikaz rezultata</legend>
+
+<table>
+    <thead>
+        <tr>
+        <th>Datum posudbe</th>
+        <th>Datum povratka</th>
+        <th>Član</th>
+        <th>Knjiga</th>        
+        </tr>    
+    </thead>
+    
+    <tbody>
+        <!-- Prođi sve knjige kao svaku posebno -->
+	<?php foreach ($this->svePosudbe as $posudba): ?>
+        
+	<tr>
+        <td><?php echo $posudba['datumPosudbe'] ?></td>
+        <td><?php echo $posudba['datumPovratka'] ?></td>
+        <td><?php echo $posudba['clan'] ?></td>
+        <td><?php echo $posudba['knjiga'] ?></td>
+        </tr>
+        
+        <?php endforeach;?>
+	
+    </tbody>
+</table>
+</fieldset>
+</form>
+<?php endif;?>
 
 <?php if(count($this->rezultati) > 0): ?>
 

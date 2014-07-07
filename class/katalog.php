@@ -25,8 +25,6 @@ class Katalog extends Model
     
     public function pretraga($naslov, $autor) {
         
-        
-        
     }
 
 

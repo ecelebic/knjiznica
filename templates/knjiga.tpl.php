@@ -22,8 +22,44 @@
 
 
 <a href="novaKnjiga.php" class="button green" >Dodaj novu knjigu</a>
+<!-- definirali smo 'list'-->
+<a href="knjiga.php?list=all"class="button green" name="prikazi">Prikaži sve knjige</a>
 
-<input type="submit" class="button green" value="Prikaži sve knjige" name="prikazi"/>
+<!-- Ako je setano sveKnjige (def.u knjiga.php) -->
+<?php if(isset($this->sveKnjige)): ?> 
+<form>
+<fieldset>
+<legend>Prikaz rezultata</legend>
+
+<table>
+    <thead>
+        <tr>
+        <th>Naslov</th>
+        <th>Autor</th>
+        <th>Godina izdanja</th>
+        <th>Dostupnost</th>
+        </tr>    
+    </thead>
+    
+    <tbody>
+        <!-- Prođi sve knjige kao svaku posebno -->
+	<?php foreach ($this->sveKnjige as $knjiga): ?>
+        
+	<tr>
+        <td><?php echo $knjiga['naslov'] ?></td>
+        <td><?php echo $knjiga['autor'] ?></td>
+        <td><?php echo $knjiga['godinaIzdanja'] ?></td>
+        <td><?php echo $knjiga['dostupnostKnjige'] ?></td>
+        </tr>
+        
+        <?php endforeach;?>
+	
+    </tbody>
+</table>
+</fieldset>
+</form>
+<?php endif;?>
+
 
 <?php if(count($this->rezultati) > 0): ?>  
 
@@ -31,7 +67,7 @@
 <fieldset>
 <legend>Prikaz rezultata</legend>
 
-<table class="knjiga">
+<table>
     <thead>
         <tr>
         <th>Naslov</th>

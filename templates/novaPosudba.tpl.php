@@ -20,8 +20,8 @@
 
 <?php if (isset($this->posudbaSifra)): ?>
         <input type="hidden" value="<?php echo $this->posudbaSifra ?>" name="sifra" />
-    <?php endif ?>
-        
+<?php endif ?>
+     
 <div class="row">
 <div class="large-12">
 <label for="datumPosudbe">Datum posudbe:</label>
@@ -55,7 +55,7 @@
     </select>     
 </div>
 </div>
-    
+
 <input type="submit" class="button green" value="Promijeni" name="promijeni"/>
 
 

@@ -15,7 +15,7 @@ class Posudba extends Model
            return;
         }
         
-        $izraz = $this->pdoConnection->prepare("select a.sifra, a.datumPosudbe, a.datumPovratka, b.naslov, b.autor, c.ime, c.prezime
+        $izraz = $this->pdoConnection->prepare("select a.sifra, a.datumPosudbe, a.datumPovratka, b.naslov, b.autor, CONCAT(c.ime, ' ', c.prezime) as clan
                                                 from posudba a
                                                 inner join knjiga b
                                                 on a.knjiga=b.sifra
@@ -78,8 +78,8 @@ class Posudba extends Model
         $this->data['knjiga'] = $knjiga;
     }
     
-    public function getClan($clan){
-        return $this->data['clan'] = $clan;
+    public function getClan(){
+        return $this->data['clan'];
     }
     
 }

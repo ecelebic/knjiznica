@@ -3,12 +3,21 @@ session_start();
 require_once 'class/model.php';
 require_once 'class/savant/Savant3.php';
 require_once 'class/posudba.php';
+require_once 'class/katalogcollection.php';
+require_once 'class/clancollect.php';
+
 
 $tpl = new Savant3(
     array(
         'template_path' => 'templates'
     )
 );
+
+$knjige = new KatalogCollection();
+$tpl->assign('knjige', $knjige->getData());
+
+$clanovi = new ClanCollect();
+$tpl->assign('clanovi', $clanovi->getData());
 
 if (isset($_REQUEST['sifra'])) {
     // update postojece posudbe
@@ -18,7 +27,7 @@ if (isset($_REQUEST['sifra'])) {
     $tpl->assign('posudbaDatumPosudbe', $posudba->getdatumPosudbe());
     $tpl->assign('posudbaDatumPovratka', $posudba->getdatumPovratka());
     $tpl->assign('posudbaClan', $posudba->getClan());
-    $tpl->assign('posudbaKnjiga', $posudba->getNaslovKnjige() . ' ' . $posudba->getAutorKnjige());
+    $tpl->assign('posudbaKnjiga', $posudba->getKnjiga());
 } else {
     // nova posudba
     $posudba = new Posudba();

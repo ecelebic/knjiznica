@@ -29,7 +29,7 @@ if(isset($_GET['search'])) {
 
 $knjige = new KatalogCollection();
 
-$tpl->assign('knjige', $knjige->data);
+
 $tpl->assign('title', $title);
 $tpl->assign('rezultati', $rezultati);
 

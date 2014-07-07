@@ -5,3 +5,5 @@ class KatalogCollection extends Collection
 {
     protected $tableName = 'knjiga';
 }
+
+

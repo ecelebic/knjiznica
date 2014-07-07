@@ -50,4 +50,5 @@ class Pretraga extends Baza
 
         return $sql->fetchAll(PDO::FETCH_ASSOC);
     }
+    
 }

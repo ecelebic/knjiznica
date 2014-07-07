@@ -23,6 +23,7 @@
 
 <a href="novaKnjiga.php" class="button green" >Dodaj novu knjigu</a>
 
+<input type="submit" class="button green" value="Prikaži sve knjige" name="prikazi"/>
 
 <?php if(count($this->rezultati) > 0): ?>  
 

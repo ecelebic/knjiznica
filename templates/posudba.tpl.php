@@ -30,10 +30,9 @@
             <tr>
 		<th>Datum posudbe</th>
 		<th>Datum povratka</th>
-                <th>Ime člana</th>
-                <th>Prezime člana</th>
-                <th>Autor knjige</th>
-                <th>Naslov knjige</th>
+                <th>Član</th>
+                <th>Knjiga</th>
+                
                 
                 <th>Promijeni/Obriši</th>
             </tr>
@@ -44,10 +43,9 @@
             <tr>    
                 <td><?php echo $posudba->getdatumPosudbe()?></td>
                 <td><?php echo $posudba->getdatumPovratka()?></td>
-                <td><?php echo $posudba->getImeClana()?></td>                
-                <td><?php echo $posudba->getPrezimeClana()?></td>
-                <td><?php echo $posudba->getAutorKnjige()?></td>
-                <td><?php echo $posudba->getNaslovKnjige()?></td>
+                <td><?php echo $posudba->getClan()?></td>                
+                <td><?php echo $posudba->getKnjiga()?></td>
+                
                 <td><a href="novaPosudba.php?sifra=<?php echo $rezultat['sifra'] ?>" class="button green" >Promijeni posudbu</a>
             
                     <a href="posudba.php?sifra=<?php echo $rezultat['sifra'] ?>&delete=true" class="button green" >Obriši posudbu</a></td>

@@ -23,7 +23,7 @@
         <fieldset>
         <legend>Prikaz rezultata</legend>
         
-            <table class="catalog">
+            <table>
                 <thead>
                     <tr>
                         <th>Naslov</th>
@@ -42,7 +42,7 @@
                     </tr>                    
 <?php endforeach;?>
                 </tbody>
-             </table>
+            </table>
         
         </fieldset>
         </form>    

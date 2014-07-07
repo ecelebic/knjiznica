@@ -78,6 +78,10 @@ class Posudba extends Model
         $this->data['knjiga'] = $knjiga;
     }
     
+    public function getClan($clan){
+        return $this->data['clan'] = $clan;
+    }
+    
 }
 
 

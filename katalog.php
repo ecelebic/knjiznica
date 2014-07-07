@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once 'class/model.php';
+require_once 'class/katalogcollection.php';
 
 require_once 'class/pretraga.php';
 require_once 'class/knjiga.php';
@@ -26,6 +27,9 @@ if(isset($_GET['search'])) {
     }
 }
 
+$knjige = new KatalogCollection();
+
+$tpl->assign('knjige', $knjige->data);
 $tpl->assign('title', $title);
 $tpl->assign('rezultati', $rezultati);
 

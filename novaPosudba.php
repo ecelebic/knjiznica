@@ -17,7 +17,7 @@ if (isset($_REQUEST['sifra'])) {
     $tpl->assign('posudbaSifra', $posudba->getSifra());
     $tpl->assign('posudbaDatumPosudbe', $posudba->getdatumPosudbe());
     $tpl->assign('posudbaDatumPovratka', $posudba->getdatumPovratka());
-    $tpl->assign('posudbaClan', $posudba->getImeClana() . ' ' . $posudba->getPrezimeClana());
+    $tpl->assign('posudbaClan', $posudba->getClan());
     $tpl->assign('posudbaKnjiga', $posudba->getNaslovKnjige() . ' ' . $posudba->getAutorKnjige());
 } else {
     // nova posudba

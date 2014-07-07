@@ -29,8 +29,6 @@
 </div>
 </div>
 
-
-
 <div class="row">
 <div class="large-12">
 <label for="datumPovratka">Datum povratka:</label>
@@ -39,35 +37,30 @@
 </div>
 </div>
 
-
 <div class="row">
-<div class="large-12">
-<label for="clan">Član:</label>
-<select name="Clanovi">
-<option id="clan" name="clan" <?php if(isset($this->posudbaClan)): ?> value="<?php echo $this->posudbaClan ?>"<?php endif ?> // php echo za članove</option>
-</select>
+<div class="large-12"> 
+    <label for="clan">Član:</label>
+    <select name="clan" id="clan">
+        <option value=""></option>
+        <?php if(isset($this->posudbaClan)): ?><option value="clan"><?php echo $this->posudbaClan ?></option>  <?php endif ?>  
+    </select> 
 </div>
-</div>
-
-
+</div>    
+    
 <div class="row">
-<div class="large-12">
-<label for="knjiga">Knjiga:</label>
-<select name="Knjige">
-<option id="knjiga" name="knjiga" <?php if(isset($this->posudbaKnjiga)): ?> value="<?php echo $this->posudbaKnjiga ?>"<?php endif ?> //php echo za knjige</option>
-</select>
+<div class="large-12"> 
+    <label for="knjiga">Knjiga:</label>
+    <select name="knjiga" id="knjiga" <?php if(isset($this->posudbaKnjiga)): ?> value="<?php echo $this->posudbaKnjiga ?>"<?php endif ?> >        
+    <option value="knjiga">Ovdje preuzeti podatke iz baze</option>    
+    </select>     
 </div>
-</div>        
-
-
+</div>
+    
+<input type="submit" class="button green" value="Promijeni" name="promijeni"/>
 
 
 </fieldset>
-<input type="submit" class="button green" value="Promijeni" name="promijeni"/>
 </form>
-
-
-
 </div>
 </div>
 </div>

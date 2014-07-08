@@ -39,7 +39,7 @@
     </thead>
       
     <tbody>
-        <!-- Prođi sve clanove kao svakog posebno -->
+        <!-- Prođi sve clanove i kroz svakog posebno -->
 	<?php foreach ($this->sviClanovi as $clan): ?>
         
 	<tr>

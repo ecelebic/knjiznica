@@ -67,8 +67,6 @@
 		<th>Datum povratka</th>
                 <th>Član</th>
                 <th>Knjiga</th>
-                
-                
                 <th>Promijeni/Obriši</th>
             </tr>
                 

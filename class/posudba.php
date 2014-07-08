@@ -66,7 +66,6 @@ class Posudba extends Model
         $this->data['knjiga'] = $knjiga;
     }
     
-    
 }
 
 

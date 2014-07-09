@@ -40,6 +40,8 @@ if(isset($_GET['list'])) {
     $tpl->assign('svePosudbe', $svePosudbe->getData());
 }
 
+
+
 $tpl->assign('title', $title);
 $tpl->assign('rezultati', $rezultati);
 

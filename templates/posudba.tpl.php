@@ -37,7 +37,7 @@
     </thead>
     
     <tbody>
-        <!-- Prođi sve knjige kao svaku posebno -->
+        <!-- Prođi sve knjige kroz svaku posebno -->
 	<?php foreach ($this->svePosudbe as $posudba): ?>
         
 	<tr>

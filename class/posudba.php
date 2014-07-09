@@ -15,12 +15,12 @@ class Posudba extends Model
            return;
         }
         
-        $izraz = $this->pdoConnection->prepare("select a.sifra, a.datumPosudbe, a.datumPovratka, CONCAT(b.naslov, '-', b.autor) as knjiga, CONCAT(c.ime, ' ', c.prezime) as clan
+        $izraz = $this->pdoConnection->prepare("select a.sifra, a.datumPosudbe, a.datumPovratka, CONCAT(b.ime, ' ', b.prezime) as a.clan, CONCAT(c.autor, '-', c.naslov) as c.knjiga
                                                 from posudba a
-                                                inner join knjiga b
-                                                on a.knjiga=b.sifra
-                                                inner join clan c
-                                                on a.clan=c.sifra WHERE a.sifra=:sifra");
+                                                inner join clan b
+                                                on a.clan=b.sifra
+                                                inner join knjiga c
+                                                on a.knjiga=c.sifra WHERE a.sifra=:sifra");
 
         $izraz->execute(array(
             'sifra' => $sifra
@@ -41,10 +41,11 @@ class Posudba extends Model
         return $this->data['datumPovratka'];
     }
         
-    public function getClan(){
+    public function getClan()
+    {
         return $this->data['clan'];
     }
-        
+    
     public function getKnjiga()
     {
         return $this->data['knjiga'];
@@ -65,7 +66,7 @@ class Posudba extends Model
      public function setKnjiga($knjiga) {
         $this->data['knjiga'] = $knjiga;
     }
-    
+   
 }
 
 

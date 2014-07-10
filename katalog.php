@@ -14,23 +14,21 @@ $tpl = new Savant3(
 );
 
 $title = 'Katalog';
-$rezultati = array();
 
-if(isset($_GET['search'])) {
+if(isset($_POST['search'])) {
     // Validacija
-    $upit = trim($_GET['search']);
+    $upit = trim($_POST['search']);
+    $rezultati = array();
     
     if($upit) {        
         $p = new Pretraga();
         $rezultati = $p->pretragaKnjiga($upit);
         $tpl->assign('upit', $upit);
     }
+    
+    $tpl->assign('rezultati', $rezultati);
+    $tpl->display('katalog_rezultati.tpl.php');
+} else {
+    $tpl->assign('title', $title);
+    $tpl->display('katalog.tpl.php');
 }
-
-$knjige = new KatalogCollection();
-
-
-$tpl->assign('title', $title);
-$tpl->assign('rezultati', $rezultati);
-
-$tpl->display('katalog.tpl.php');
